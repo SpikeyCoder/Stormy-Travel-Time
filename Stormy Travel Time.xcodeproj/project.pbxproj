@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C62ECEC51B7E2D0D00AC9C1F /* ContextDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEC41B7E2D0D00AC9C1F /* ContextDataController.swift */; };
 		C64F85C01B386B7000011FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85BF1B386B7000011FCE /* AppDelegate.swift */; };
 		C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C64F85C11B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld */; };
 		C64F85C51B386B7000011FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85C41B386B7000011FCE /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C62ECEC41B7E2D0D00AC9C1F /* ContextDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextDataController.swift; sourceTree = "<group>"; };
 		C64F85BA1B386B7000011FCE /* Stormy Travel Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stormy Travel Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64F85BE1B386B7000011FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64F85BF1B386B7000011FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				C64F85CB1B386B7100011FCE /* LaunchScreen.xib */,
 				C64F85C11B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld */,
 				C64F85BD1B386B7000011FCE /* Supporting Files */,
+				C62ECEC41B7E2D0D00AC9C1F /* ContextDataController.swift */,
 			);
 			path = "Stormy Travel Time";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64F85C51B386B7000011FCE /* ViewController.swift in Sources */,
+				C62ECEC51B7E2D0D00AC9C1F /* ContextDataController.swift in Sources */,
 				C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */,
 				C64F85C01B386B7000011FCE /* AppDelegate.swift in Sources */,
 			);
@@ -415,6 +419,7 @@
 				C64F85DE1B386B7100011FCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C64F85DF1B386B7100011FCE /* Build configuration list for PBXNativeTarget "Stormy Travel TimeTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				C64F85E11B386B7100011FCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
