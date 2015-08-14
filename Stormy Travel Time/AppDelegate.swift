@@ -6,16 +6,17 @@
 //  Copyright (c) 2015 Armstrong Enterprises. All rights reserved.
 //
 
+import GoogleMaps
+
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var dataController = ContextDataController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-         
+         GMSServices.provideAPIKey("AIzaSyCEwKWpGuKNB3G-GYmrxhhNRepH5Cv-kpY")
         // Override point for customization after application launch.
         return true
     }

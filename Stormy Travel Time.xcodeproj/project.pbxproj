@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8E1DE5D4257A9FC383552BAB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEAADA12FE09E54D76E8E63 /* libPods.a */; };
-		C62ECEC51B7E2D0D00AC9C1F /* ContextDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEC41B7E2D0D00AC9C1F /* ContextDataController.swift */; };
+		C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */; };
+		C62ECEC91B7E45D400AC9C1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */; };
+		C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECECB1B7E5F4C00AC9C1F /* MapTasks.swift */; };
+		C62ECECF1B7E611A00AC9C1F /* ContextDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECECE1B7E611A00AC9C1F /* ContextDataController.swift */; };
+		C62ECED11B7E613400AC9C1F /* MapsRemoteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECED01B7E613400AC9C1F /* MapsRemoteDataController.swift */; };
 		C64F85C01B386B7000011FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85BF1B386B7000011FCE /* AppDelegate.swift */; };
 		C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C64F85C11B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld */; };
-		C64F85C51B386B7000011FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85C41B386B7000011FCE /* ViewController.swift */; };
 		C64F85C81B386B7100011FCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64F85C61B386B7100011FCE /* Main.storyboard */; };
 		C64F85CA1B386B7100011FCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64F85C91B386B7100011FCE /* Images.xcassets */; };
 		C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64F85CB1B386B7100011FCE /* LaunchScreen.xib */; };
@@ -32,12 +35,15 @@
 		30E76E276733D8D01E76A189 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5AA86CC0A41649AE450030B9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AAEAADA12FE09E54D76E8E63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C62ECEC41B7E2D0D00AC9C1F /* ContextDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextDataController.swift; sourceTree = "<group>"; };
+		C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C62ECECB1B7E5F4C00AC9C1F /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapTasks.swift; path = util/MapTasks.swift; sourceTree = "<group>"; };
+		C62ECECE1B7E611A00AC9C1F /* ContextDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextDataController.swift; path = DataControllers/ContextDataController.swift; sourceTree = "<group>"; };
+		C62ECED01B7E613400AC9C1F /* MapsRemoteDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapsRemoteDataController.swift; path = DataControllers/MapsRemoteDataController.swift; sourceTree = "<group>"; };
 		C64F85BA1B386B7000011FCE /* Stormy Travel Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stormy Travel Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64F85BE1B386B7000011FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64F85BF1B386B7000011FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C64F85C21B386B7000011FCE /* Stormy_Travel_Time.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stormy_Travel_Time.xcdatamodel; sourceTree = "<group>"; };
-		C64F85C41B386B7000011FCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C64F85C71B386B7100011FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C64F85C91B386B7100011FCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C64F85CC1B386B7100011FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -82,6 +88,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C62ECECA1B7E5E9800AC9C1F /* util */ = {
+			isa = PBXGroup;
+			children = (
+				C62ECECB1B7E5F4C00AC9C1F /* MapTasks.swift */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		C62ECECD1B7E608300AC9C1F /* DataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C62ECECE1B7E611A00AC9C1F /* ContextDataController.swift */,
+				C62ECED01B7E613400AC9C1F /* MapsRemoteDataController.swift */,
+			);
+			name = DataControllers;
+			sourceTree = "<group>";
+		};
 		C64F85B11B386B7000011FCE = {
 			isa = PBXGroup;
 			children = (
@@ -105,14 +128,16 @@
 		C64F85BC1B386B7000011FCE /* Stormy Travel Time */ = {
 			isa = PBXGroup;
 			children = (
+				C62ECECD1B7E608300AC9C1F /* DataControllers */,
+				C62ECECA1B7E5E9800AC9C1F /* util */,
 				C64F85BF1B386B7000011FCE /* AppDelegate.swift */,
-				C64F85C41B386B7000011FCE /* ViewController.swift */,
+				C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */,
+				C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */,
 				C64F85C61B386B7100011FCE /* Main.storyboard */,
 				C64F85C91B386B7100011FCE /* Images.xcassets */,
 				C64F85CB1B386B7100011FCE /* LaunchScreen.xib */,
 				C64F85C11B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld */,
 				C64F85BD1B386B7000011FCE /* Supporting Files */,
-				C62ECEC41B7E2D0D00AC9C1F /* ContextDataController.swift */,
 			);
 			path = "Stormy Travel Time";
 			sourceTree = "<group>";
@@ -277,8 +302,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C64F85C51B386B7000011FCE /* ViewController.swift in Sources */,
-				C62ECEC51B7E2D0D00AC9C1F /* ContextDataController.swift in Sources */,
+				C62ECECF1B7E611A00AC9C1F /* ContextDataController.swift in Sources */,
+				C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */,
+				C62ECED11B7E613400AC9C1F /* MapsRemoteDataController.swift in Sources */,
+				C62ECEC91B7E45D400AC9C1F /* HomeViewModel.swift in Sources */,
+				C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */,
 				C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */,
 				C64F85C01B386B7000011FCE /* AppDelegate.swift in Sources */,
 			);

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Stormy_Travel_Time" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faU-o3-MeY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem image="location" id="7Gl-Ld-A23"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Yx2-Ui-abf"/>
+                                    <barButtonItem image="directions" id="J2H-cu-N9u"/>
+                                    <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="sRL-RH-eaI"/>
+                                    <barButtonItem image="steering_wheel" id="sHo-lw-2GK"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="imZ-Yp-NBn"/>
+                                    <barButtonItem image="map" id="Jio-Ke-9az">
+                                        <connections>
+                                            <action selector="changeMapType:" destination="BYZ-38-t0r" id="5c0-xq-QWc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.2039215714" green="0.28627452250000002" blue="0.36862745879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.9529411793" green="0.61176472900000001" blue="0.070588238540000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Mx-gt-hEp" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="600" height="512"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgC-bN-tST">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.9529411793" green="0.61176472900000001" blue="0.070588238540000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dNN-d4-s0S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="0.2039215714" green="0.28627452250000002" blue="0.36862745879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Mx-gt-hEp" firstAttribute="top" secondItem="faU-o3-MeY" secondAttribute="bottom" id="5ZU-Zq-h1d"/>
+                            <constraint firstAttribute="trailing" secondItem="XgC-bN-tST" secondAttribute="trailing" id="AkI-Lp-DFr"/>
+                            <constraint firstItem="faU-o3-MeY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DBd-8i-phG"/>
+                            <constraint firstItem="XgC-bN-tST" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L8d-IH-IMT"/>
+                            <constraint firstItem="faU-o3-MeY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RCp-Nk-boX"/>
+                            <constraint firstItem="6Mx-gt-hEp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="S84-9q-GcY"/>
+                            <constraint firstAttribute="bottom" secondItem="XgC-bN-tST" secondAttribute="bottom" id="Zzc-re-Mup"/>
+                            <constraint firstAttribute="trailing" secondItem="faU-o3-MeY" secondAttribute="trailing" id="dek-Vh-kia"/>
+                            <constraint firstItem="XgC-bN-tST" firstAttribute="top" secondItem="6Mx-gt-hEp" secondAttribute="bottom" id="ph2-ob-hlc"/>
+                            <constraint firstAttribute="trailing" secondItem="6Mx-gt-hEp" secondAttribute="trailing" id="z6o-wa-MhS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="findAddressButton" destination="7Gl-Ld-A23" id="4s4-hG-QvQ"/>
+                        <outlet property="infoLabel" destination="XgC-bN-tST" id="Sja-EM-iTW"/>
+                        <outlet property="mapView" destination="6Mx-gt-hEp" id="uXd-CB-Rcu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="directions" width="25" height="25"/>
+        <image name="location" width="25" height="25"/>
+        <image name="map" width="25" height="25"/>
+        <image name="steering_wheel" width="25" height="25"/>
+    </resources>
 </document>
