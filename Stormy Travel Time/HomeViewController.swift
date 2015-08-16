@@ -21,6 +21,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
     
     var mapTasks = MapTasks()
     
+    var locationMarker: GMSMarker!
+    
+    var originMarker: GMSMarker!
+    
+    var destinationMarker: GMSMarker!
+    
+    var routePolyline: GMSPolyline!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -91,11 +99,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
                 {
                     let coordinate = CLLocationCoordinate2D(latitude: self.mapTasks.fetchedAddressLatitude, longitude: self.mapTasks.fetchedAddressLongitude)
                     self.mapView.camera = GMSCameraPosition.cameraWithTarget(coordinate, zoom: 14.0)
+                    self.setuplocationMarker(coordinate)
                 }
                 
             })
             
         }
+        
+        
         
         let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
             
@@ -107,6 +118,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         presentViewController(addressAlert, animated: true, completion: nil)
     
     }
+    
     
     func showAlertWithMessage(message: String) {
         let alertController = UIAlertController(title: "GMapsDemo", message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -120,6 +132,74 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    
+    @IBAction func createRoute(sender: AnyObject) {
+        let addressAlert = UIAlertController(title: "Create Route", message: "Connect locations with a route:", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        addressAlert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Origin?"
+        }
+        
+        addressAlert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Destination?"
+        }
+        
+        
+        let createRouteAction = UIAlertAction(title: "Create Route", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+            let origin = (addressAlert.textFields![0] as! UITextField).text as String
+            let destination = (addressAlert.textFields![1] as! UITextField).text as String
+            
+            self.mapTasks.getDirections(origin, destination: destination, waypoints: nil, travelMode: nil, completionHandler: { (status, success) -> Void in
+                if success {
+                    self.configureMapAndMarkersForRoute()
+                    self.drawRoute()
+                    self.displayRouteInfo()
+                }
+                else {
+                    println(status)
+                }
+            })
+        }
+        
+       
+        
+        let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
+            
+        }
+        
+        addressAlert.addAction(createRouteAction)
+        addressAlert.addAction(closeAction)
+        
+        presentViewController(addressAlert, animated: true, completion: nil)
+    }
+
+    func configureMapAndMarkersForRoute()
+    {
+        originMarker = GMSMarker(position: self.mapTasks.originCoordinate)
+        originMarker.map = self.mapView
+        originMarker.icon = GMSMarker.markerImageWithColor(UIColor.greenColor())
+        originMarker.title = self.mapTasks.originAddress
+        
+        destinationMarker = GMSMarker(position: self.mapTasks.destinationCoordinate)
+        destinationMarker.map = self.mapView
+        destinationMarker.icon = GMSMarker.markerImageWithColor(UIColor.redColor())
+        destinationMarker.title = self.mapTasks.destinationAddress
+    }
+    
+    func drawRoute()
+    {
+        let route = mapTasks.overviewPolyline["points"] as! String
+        
+        let path: GMSPath = GMSPath(fromEncodedPath: route)
+        routePolyline = GMSPolyline(path: path)
+        routePolyline.map = mapView
+        
+    }
+    
+    func displayRouteInfo()
+    {
+        infoLabel.text = mapTasks.totalDistance + "\n" + mapTasks.totalDuration
+    }
 
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedWhenInUse {
@@ -135,6 +215,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
             
             didFindMyLocation = true
         }
+    }
+    
+    func setuplocationMarker(coordinate: CLLocationCoordinate2D) {
+        locationMarker = GMSMarker(position: coordinate)
+        locationMarker.map = mapView
+        
+        locationMarker.title = mapTasks.fetchedFormattedAddress
+        locationMarker.appearAnimation = kGMSMarkerAnimationPop
+        locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+        locationMarker.opacity = 0.75
+        
+        locationMarker.flat = false
+        locationMarker.snippet = "The best place on earth."
     }
 
 
