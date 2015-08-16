@@ -218,6 +218,7 @@
 				TargetAttributes = {
 					C64F85B91B386B7000011FCE = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = CUKDK2C25K;
 					};
 					C64F85D11B386B7100011FCE = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -438,9 +439,12 @@
 			baseConfigurationReference = 5AA86CC0A41649AE450030B9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Stormy Travel Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -449,9 +453,12 @@
 			baseConfigurationReference = 30E76E276733D8D01E76A189 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Stormy Travel Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

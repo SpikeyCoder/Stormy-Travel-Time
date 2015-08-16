@@ -19,6 +19,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
     
     var didFindMyLocation = false
     
+    var mapTasks = MapTasks()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -64,6 +66,60 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         
         presentViewController(actionSheet, animated: true, completion: nil)
     }
+    
+    @IBAction func findAddress(sender: AnyObject)
+    {
+        let addressAlert = UIAlertController(title: "Address Finder", message: "Type the address you want to find:", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        addressAlert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Address?"
+        }
+        
+        let findAction = UIAlertAction(title: "Find Address", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+            let address = (addressAlert.textFields![0] as! UITextField).text as String
+            
+            self.mapTasks.geocodeAddress(address, withCompletionHandler: { (status, success) -> Void in
+                
+                if !success {
+                    println(status)
+                    
+                    if status == "ZERO_RESULTS" {
+                        self.showAlertWithMessage("The location could not be found.")
+                    }
+                }
+                else
+                {
+                    let coordinate = CLLocationCoordinate2D(latitude: self.mapTasks.fetchedAddressLatitude, longitude: self.mapTasks.fetchedAddressLongitude)
+                    self.mapView.camera = GMSCameraPosition.cameraWithTarget(coordinate, zoom: 14.0)
+                }
+                
+            })
+            
+        }
+        
+        let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
+            
+        }
+        
+        addressAlert.addAction(findAction)
+        addressAlert.addAction(closeAction)
+        
+        presentViewController(addressAlert, animated: true, completion: nil)
+    
+    }
+    
+    func showAlertWithMessage(message: String) {
+        let alertController = UIAlertController(title: "GMapsDemo", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
+            
+        }
+        
+        alertController.addAction(closeAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedWhenInUse {

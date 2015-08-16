@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -21,7 +21,11 @@
                                 <items>
                                     <barButtonItem image="location" id="7Gl-Ld-A23"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Yx2-Ui-abf"/>
-                                    <barButtonItem image="directions" id="J2H-cu-N9u"/>
+                                    <barButtonItem image="directions" id="J2H-cu-N9u">
+                                        <connections>
+                                            <action selector="findAddress:" destination="BYZ-38-t0r" id="63a-In-OJI"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="sRL-RH-eaI"/>
                                     <barButtonItem image="steering_wheel" id="sHo-lw-2GK"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="imZ-Yp-NBn"/>
