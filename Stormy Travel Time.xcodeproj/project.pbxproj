@@ -19,6 +19,7 @@
 		C64F85CA1B386B7100011FCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64F85C91B386B7100011FCE /* Images.xcassets */; };
 		C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64F85CB1B386B7100011FCE /* LaunchScreen.xib */; };
 		C64F85D91B386B7100011FCE /* Stormy_Travel_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */; };
+		F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		C64F85D21B386B7100011FCE /* Stormy Travel TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stormy Travel TimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64F85D71B386B7100011FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stormy_Travel_TimeTests.swift; sourceTree = "<group>"; };
+		F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataController.swift; path = DataControllers/WeatherDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				C62ECECE1B7E611A00AC9C1F /* ContextDataController.swift */,
 				C62ECED01B7E613400AC9C1F /* MapsRemoteDataController.swift */,
+				F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */,
 			);
 			name = DataControllers;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */,
 				C62ECED11B7E613400AC9C1F /* MapsRemoteDataController.swift in Sources */,
 				C62ECEC91B7E45D400AC9C1F /* HomeViewModel.swift in Sources */,
+				F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */,
 				C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */,
 				C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */,
 				C64F85C01B386B7000011FCE /* AppDelegate.swift in Sources */,

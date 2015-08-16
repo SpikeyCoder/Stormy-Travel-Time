@@ -9,6 +9,13 @@
 import UIKit
 import GoogleMaps
 
+enum TravelModes: Int {
+    case driving
+    case walking
+    case bicycling
+}
+
+
 class HomeViewController: UIViewController, CLLocationManagerDelegate  {
 
     @IBOutlet weak var findAddressButton: UIBarButtonItem!
@@ -18,6 +25,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
     var locationManager = CLLocationManager()
     
     var didFindMyLocation = false
+    
+    var markersArray: Array<GMSMarker> = []
+    
+    var waypointsArray: Array<String> = []
+    
+    var travelMode = TravelModes.driving
     
     var mapTasks = MapTasks()
     
@@ -45,6 +58,74 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
 
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self, forKeyPath: "myLocation")
+    }
+    
+    @IBAction func changeTravelMode(sender: AnyObject) {
+        let actionSheet = UIAlertController(title: "Travel Mode", message: "Select travel mode:", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        let drivingModeAction = UIAlertAction(title: "Driving", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+            self.travelMode = TravelModes.driving
+            self.recreateRoute()
+        }
+        
+        let walkingModeAction = UIAlertAction(title: "Walking", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+            self.travelMode = TravelModes.walking
+            self.recreateRoute()
+        }
+        
+        let bicyclingModeAction = UIAlertAction(title: "Bicycling", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+            self.travelMode = TravelModes.bicycling
+            self.recreateRoute()
+        }
+        
+        
+        let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
+            
+        }
+        
+        actionSheet.addAction(drivingModeAction)
+        actionSheet.addAction(walkingModeAction)
+        actionSheet.addAction(bicyclingModeAction)
+        actionSheet.addAction(closeAction)
+        
+        presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    
+    func recreateRoute() {
+        if let polyline = routePolyline {
+            clearRoute()
+            
+            mapTasks.getDirections(mapTasks.originAddress, destination: mapTasks.destinationAddress, waypoints: waypointsArray, travelMode: nil, completionHandler: { (status, success) -> Void in
+                
+                if success {
+                    self.configureMapAndMarkersForRoute()
+                    self.drawRoute()
+                    self.displayRouteInfo()
+                }
+                else {
+                    println(status)
+                }
+            })
+        }
+    }
+    
+    func clearRoute() {
+        originMarker.map = nil
+        destinationMarker.map = nil
+        routePolyline.map = nil
+        
+        originMarker = nil
+        destinationMarker = nil
+        routePolyline = nil
+        
+        if markersArray.count > 0 {
+            for marker in markersArray {
+                marker.map = nil
+            }
+            
+            markersArray.removeAll(keepCapacity: false)
+        }
     }
     
     @IBAction func changeMapType(sender: AnyObject)

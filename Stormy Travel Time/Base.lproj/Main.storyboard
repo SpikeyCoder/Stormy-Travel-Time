@@ -19,11 +19,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faU-o3-MeY">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem image="location" id="7Gl-Ld-A23"/>
+                                    <barButtonItem image="location" id="7Gl-Ld-A23">
+                                        <connections>
+                                            <action selector="findAddress:" destination="BYZ-38-t0r" id="qEA-j6-fYl"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Yx2-Ui-abf"/>
                                     <barButtonItem image="directions" id="J2H-cu-N9u">
                                         <connections>
-                                            <action selector="findAddress:" destination="BYZ-38-t0r" id="63a-In-OJI"/>
+                                            <action selector="changeTravelMode:" destination="BYZ-38-t0r" id="DYh-bt-HRs"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="sRL-RH-eaI"/>

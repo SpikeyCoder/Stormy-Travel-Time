@@ -103,6 +103,14 @@ class MapTasks: NSObject
                 
                 directionsURLString = directionsURLString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                 
+                if let routeWaypoints = waypoints {
+                    directionsURLString += "&waypoints=optimize:true"
+                    
+                    for waypoint in routeWaypoints {
+                        directionsURLString += "|" + waypoint
+                    }
+                }
+                
                 let directionsURL = NSURL(string: directionsURLString)
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
