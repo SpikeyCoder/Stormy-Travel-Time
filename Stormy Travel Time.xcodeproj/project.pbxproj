@@ -20,6 +20,8 @@
 		C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64F85CB1B386B7100011FCE /* LaunchScreen.xib */; };
 		C64F85D91B386B7100011FCE /* Stormy_Travel_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */; };
 		F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */; };
+		F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76BAC111B811B31008640E2 /* SideMenu.storyboard */; };
+		F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		C64F85D71B386B7100011FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stormy_Travel_TimeTests.swift; sourceTree = "<group>"; };
 		F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataController.swift; path = DataControllers/WeatherDataController.swift; sourceTree = "<group>"; };
+		F76BAC111B811B31008640E2 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 				C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */,
 				C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */,
 				C64F85C61B386B7100011FCE /* Main.storyboard */,
+				F76BAC111B811B31008640E2 /* SideMenu.storyboard */,
+				F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */,
 				C64F85C91B386B7100011FCE /* Images.xcassets */,
 				C64F85CB1B386B7100011FCE /* LaunchScreen.xib */,
 				C64F85C11B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld */,
@@ -253,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */,
 				C64F85C81B386B7100011FCE /* Main.storyboard in Resources */,
 				C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */,
 				C64F85CA1B386B7100011FCE /* Images.xcassets in Resources */,
@@ -310,6 +317,7 @@
 				C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */,
 				C62ECED11B7E613400AC9C1F /* MapsRemoteDataController.swift in Sources */,
 				C62ECEC91B7E45D400AC9C1F /* HomeViewModel.swift in Sources */,
+				F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */,
 				F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */,
 				C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */,
 				C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */,

@@ -54,13 +54,26 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
     
     private func registerForNotifications(){
         mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
+       
     }
 
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self, forKeyPath: "myLocation")
     }
     
-    @IBAction func changeTravelMode(sender: AnyObject) {
+    func findAddressCellPressed(note:NSNotification){
+        self.findAddressAction()
+    }
+    
+    
+    
+    @IBAction func changeTravelMode(sender: AnyObject)
+    {
+        self.travelModeAction()
+    }
+    
+    func travelModeAction()
+    {
         let actionSheet = UIAlertController(title: "Travel Mode", message: "Select travel mode:", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         let drivingModeAction = UIAlertAction(title: "Driving", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
@@ -130,6 +143,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
     
     @IBAction func changeMapType(sender: AnyObject)
     {
+        self.mapTypeAction()
+    }
+    
+    func mapTypeAction()
+    {
         let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         let normalMapTypeAction = UIAlertAction(title: "Normal", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
@@ -154,9 +172,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         actionSheet.addAction(cancelAction)
         
         presentViewController(actionSheet, animated: true, completion: nil)
+        
     }
     
     @IBAction func findAddress(sender: AnyObject)
+    {
+        self.findAddressAction()
+    }
+    
+    func findAddressAction()
     {
         let addressAlert = UIAlertController(title: "Address Finder", message: "Type the address you want to find:", preferredStyle: UIAlertControllerStyle.Alert)
         
@@ -197,7 +221,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         addressAlert.addAction(closeAction)
         
         presentViewController(addressAlert, animated: true, completion: nil)
-    
+        
+
     }
     
     
@@ -214,7 +239,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
     }
     
     
-    @IBAction func createRoute(sender: AnyObject) {
+    @IBAction func createRoute(sender: AnyObject)
+    {
+        self.createRouteAction()
+    }
+    
+    func createRouteAction()
+    {
         let addressAlert = UIAlertController(title: "Create Route", message: "Connect locations with a route:", preferredStyle: UIAlertControllerStyle.Alert)
         
         addressAlert.addTextFieldWithConfigurationHandler { (textField) -> Void in
@@ -242,7 +273,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
             })
         }
         
-       
+        
         
         let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
             
@@ -252,6 +283,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         addressAlert.addAction(closeAction)
         
         presentViewController(addressAlert, animated: true, completion: nil)
+
     }
 
     func configureMapAndMarkersForRoute()
