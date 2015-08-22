@@ -18,11 +18,14 @@ enum TravelModes: Int {
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate  {
 
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var findAddressButton: UIBarButtonItem!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var infoLabel: UILabel!
     
     var locationManager = CLLocationManager()
+    
+    var homeViewModel = HomeViewModel()
     
     var didFindMyLocation = false
     

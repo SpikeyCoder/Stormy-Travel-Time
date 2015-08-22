@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F0290427-6E01-4FBF-A272-51D754B81BEF</string>
+	<string>082DFD49-B9C5-4280-89CA-03772AC09279</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Stormy Travel Time</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -16,13 +16,13 @@
 		<string>https://github.com/SpikeyCoder/Stormy-Travel-Time.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Stormy Travel Time.xcworkspace</string>
+	<string>Stormy Travel Time.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>01529694042D8C98B30DC19F4D4370A306884FE4</key>
-		<string>../../SWRevealViewController</string>
+		<string>../../../SWRevealViewController</string>
 		<key>6AA912B523BA963EFC35FAA05F5FEC694C9D83A6</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/SpikeyCoder/Stormy-Travel-Time.git</string>

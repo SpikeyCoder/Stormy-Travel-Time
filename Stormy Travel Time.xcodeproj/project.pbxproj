@@ -22,6 +22,8 @@
 		F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */; };
 		F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76BAC111B811B31008640E2 /* SideMenu.storyboard */; };
 		F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */; };
+		F76BAC1C1B88C8BA008640E2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC1B1B88C8BA008640E2 /* SWRevealViewController.m */; };
+		F76BAC261B88E18E008640E2 /* MenuActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC251B88E18E008640E2 /* MenuActionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataController.swift; path = DataControllers/WeatherDataController.swift; sourceTree = "<group>"; };
 		F76BAC111B811B31008640E2 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		F76BAC1A1B88C8BA008640E2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../SWRevealViewController/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		F76BAC1B1B88C8BA008640E2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		F76BAC231B88CBC9008640E2 /* Objective-CBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Objective-CBridgingHeader.h"; path = "Stormy Travel Time/Objective-CBridgingHeader.h"; sourceTree = "<group>"; };
+		F76BAC251B88E18E008640E2 /* MenuActionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuActionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		C62ECECA1B7E5E9800AC9C1F /* util */ = {
 			isa = PBXGroup;
 			children = (
+				F76BAC191B88C881008640E2 /* SWRevealController */,
 				C62ECECB1B7E5F4C00AC9C1F /* MapTasks.swift */,
 			);
 			name = util;
@@ -115,6 +122,7 @@
 		C64F85B11B386B7000011FCE = {
 			isa = PBXGroup;
 			children = (
+				F76BAC231B88CBC9008640E2 /* Objective-CBridgingHeader.h */,
 				C64F85BC1B386B7000011FCE /* Stormy Travel Time */,
 				C64F85D51B386B7100011FCE /* Stormy Travel TimeTests */,
 				C64F85BB1B386B7000011FCE /* Products */,
@@ -135,10 +143,10 @@
 		C64F85BC1B386B7000011FCE /* Stormy Travel Time */ = {
 			isa = PBXGroup;
 			children = (
+				F76BAC241B88E156008640E2 /* ViewModels */,
 				C62ECECD1B7E608300AC9C1F /* DataControllers */,
 				C62ECECA1B7E5E9800AC9C1F /* util */,
 				C64F85BF1B386B7000011FCE /* AppDelegate.swift */,
-				C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */,
 				C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */,
 				C64F85C61B386B7100011FCE /* Main.storyboard */,
 				F76BAC111B811B31008640E2 /* SideMenu.storyboard */,
@@ -174,6 +182,24 @@
 				C64F85D71B386B7100011FCE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F76BAC191B88C881008640E2 /* SWRevealController */ = {
+			isa = PBXGroup;
+			children = (
+				F76BAC1A1B88C8BA008640E2 /* SWRevealViewController.h */,
+				F76BAC1B1B88C8BA008640E2 /* SWRevealViewController.m */,
+			);
+			name = SWRevealController;
+			sourceTree = "<group>";
+		};
+		F76BAC241B88E156008640E2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */,
+				F76BAC251B88E18E008640E2 /* MenuActionViewModel.swift */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +346,8 @@
 				F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */,
 				F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */,
 				C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */,
+				F76BAC261B88E18E008640E2 /* MenuActionViewModel.swift in Sources */,
+				F76BAC1C1B88C8BA008640E2 /* SWRevealViewController.m in Sources */,
 				C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */,
 				C64F85C01B386B7000011FCE /* AppDelegate.swift in Sources */,
 			);
@@ -457,6 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stormy Travel Time/Objective-CBridgingHeader.h";
 			};
 			name = Debug;
 		};
@@ -471,6 +500,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stormy Travel Time/Objective-CBridgingHeader.h";
 			};
 			name = Release;
 		};
