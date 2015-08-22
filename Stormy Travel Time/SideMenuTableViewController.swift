@@ -35,33 +35,33 @@ class SideMenuTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return 4
     }
     
     func findAddressCellPressed()
     {
-        NSNotificationCenter.defaultCenter().postNotificationName("", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("com.StormyTravelTime.findAddress", object: nil)
     }
     
     func travelTypeCellPressed()
     {
-        NSNotificationCenter.defaultCenter().postNotificationName("", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("com.StormyTravelTime.travelType", object: nil)
     }
     
     func directionsCellPressed()
     {
-        NSNotificationCenter.defaultCenter().postNotificationName("", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("com.StormyTravelTime.directions", object: nil)
     }
     
     func mapTypeCellPressed()
     {
-        NSNotificationCenter.defaultCenter().postNotificationName("", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("com.StormyTravelTime.mapType", object: nil)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

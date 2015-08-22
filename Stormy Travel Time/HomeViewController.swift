@@ -47,6 +47,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
@@ -57,18 +63,26 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
     
     private func registerForNotifications(){
         mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "findAddressCellPressed:", name: "com.StormyTravelTime.findAddress", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeMapTypePressed:", name: "com.StormyTravelTime.mapType", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "createRoutePressed:", name: "com.StormyTravelTime.directions", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeTravelModePressed:", name: "com.StormyTravelTime.travelType", object: nil)
        
     }
 
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self, forKeyPath: "myLocation")
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func findAddressCellPressed(note:NSNotification){
         self.findAddressAction()
     }
     
-    
+    func changeTravelModePressed(note:NSNotification)
+    {
+        self.travelModeAction()
+    }
     
     @IBAction func changeTravelMode(sender: AnyObject)
     {
@@ -82,21 +96,24 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         let drivingModeAction = UIAlertAction(title: "Driving", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.travelMode = TravelModes.driving
             self.recreateRoute()
+             self.revealViewController().revealToggleAnimated(true)
         }
         
         let walkingModeAction = UIAlertAction(title: "Walking", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.travelMode = TravelModes.walking
             self.recreateRoute()
+             self.revealViewController().revealToggleAnimated(true)
         }
         
         let bicyclingModeAction = UIAlertAction(title: "Bicycling", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.travelMode = TravelModes.bicycling
             self.recreateRoute()
+             self.revealViewController().revealToggleAnimated(true)
         }
         
         
         let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            
+           
         }
         
         actionSheet.addAction(drivingModeAction)
@@ -144,6 +161,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         }
     }
     
+    func changeMapTypePressed(note:NSNotification){
+        self.mapTypeAction()
+    }
+    
     @IBAction func changeMapType(sender: AnyObject)
     {
         self.mapTypeAction()
@@ -155,14 +176,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         
         let normalMapTypeAction = UIAlertAction(title: "Normal", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.mapView.mapType = kGMSTypeNormal
+             self.revealViewController().revealToggleAnimated(true)
         }
         
         let terrainMapTypeAction = UIAlertAction(title: "Terrain", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.mapView.mapType = kGMSTypeTerrain
+             self.revealViewController().revealToggleAnimated(true)
         }
         
         let hybridMapTypeAction = UIAlertAction(title: "Hybrid", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.mapView.mapType = kGMSTypeHybrid
+             self.revealViewController().revealToggleAnimated(true)
         }
         
         let cancelAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
@@ -211,13 +235,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
                 }
                 
             })
+             self.revealViewController().revealToggleAnimated(true)
             
         }
         
         
         
         let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            
+    
         }
         
         addressAlert.addAction(findAction)
@@ -239,6 +264,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         alertController.addAction(closeAction)
         
         presentViewController(alertController, animated: true, completion: nil)
+    }
+   
+//    MARK : - Create Route Action
+    
+    func createRoutePressed(note: NSNotification){
+        self.createRouteAction()
     }
     
     
@@ -274,6 +305,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
                     println(status)
                 }
             })
+            self.revealViewController().revealToggleAnimated(true)
         }
         
         
