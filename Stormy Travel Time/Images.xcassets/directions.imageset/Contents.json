@@ -2,18 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "directions.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "directions@2x.png"
+      "filename" : "Waypoint Map-50.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "directions@3x.png"
+      "filename" : "Waypoint Map-75.png"
     }
   ],
   "info" : {

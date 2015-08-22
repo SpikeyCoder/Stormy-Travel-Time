@@ -172,8 +172,9 @@ class MapTasks: NSObject
         }
         
         
-        let distanceInKilometers: Double = Double(totalDistanceInMeters / 1000)
-        totalDistance = "Total Distance: \(distanceInKilometers) Km"
+        let distanceInKilometers: Double = Double(totalDistanceInMeters)
+        let distanceInMiles: Double = Double(distanceInKilometers * 0.000621371 )
+        totalDistance = "Total Distance: \(distanceInMiles) miles"
         
         
         let mins = totalDurationInSeconds / 60
@@ -183,6 +184,23 @@ class MapTasks: NSObject
         let remainingMins = mins % 60
         let remainingSecs = totalDurationInSeconds % 60
         
-        totalDuration = "Duration: \(days) d, \(remainingHours) h, \(remainingMins) mins, \(remainingSecs) secs"
+        var timeArray = ["\(days) days, ", "\(remainingHours) hours, ", "\(remainingMins) mins, ", "\(remainingSecs) secs"]
+        var infoTimeString = "Duration: "
+        for timeUnit in timeArray
+        {
+            if timeUnit.rangeOfString("secs") == nil
+            {
+                if timeUnit.rangeOfString("0") == nil
+                {
+                    infoTimeString += timeUnit
+                }
+            }
+            else
+            {
+                infoTimeString += timeUnit
+            }
+        }
+        
+        totalDuration = infoTimeString
     }
 }

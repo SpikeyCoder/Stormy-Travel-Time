@@ -16,12 +16,13 @@ enum TravelModes: Int {
 }
 
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate  {
+class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigationBarDelegate  {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var findAddressButton: UIBarButtonItem!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var navigationBar: UINavigationItem!
     
     var locationManager = CLLocationManager()
     
@@ -53,6 +54,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+//        var navLayoutDict:NSDictionary = [UIColor.blackColor(),NSForegroundColorAttributeName,UIFont(descriptor: "", size: 14.0),NSFontAttributeName, nil]
+//        self.navigationBar.setValuesForKeysWithDictionary(navLayoutDict as [NSObject : AnyObject])
+     
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
@@ -80,11 +85,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
     }
     
     func changeTravelModePressed(note:NSNotification)
-    {
-        self.travelModeAction()
-    }
-    
-    @IBAction func changeTravelMode(sender: AnyObject)
     {
         self.travelModeAction()
     }
@@ -165,11 +165,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         self.mapTypeAction()
     }
     
-    @IBAction func changeMapType(sender: AnyObject)
-    {
-        self.mapTypeAction()
-    }
-    
     func mapTypeAction()
     {
         let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -202,11 +197,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         
     }
     
-    @IBAction func findAddress(sender: AnyObject)
-    {
-        self.findAddressAction()
-    }
-    
     func findAddressAction()
     {
         let addressAlert = UIAlertController(title: "Address Finder", message: "Type the address you want to find:", preferredStyle: UIAlertControllerStyle.Alert)
@@ -224,7 +214,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
                     println(status)
                     
                     if status == "ZERO_RESULTS" {
-                        self.showAlertWithMessage("The location could not be found.")
+                        var alert = self.homeViewModel.showAlertWithMessage("The location could not be found.")
+                        self.presentViewController(alert, animated: true, completion: nil)
                     }
                 }
                 else
@@ -252,29 +243,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate  {
         
 
     }
-    
-    
-    func showAlertWithMessage(message: String) {
-        let alertController = UIAlertController(title: "GMapsDemo", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        
-        let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            
-        }
-        
-        alertController.addAction(closeAction)
-        
-        presentViewController(alertController, animated: true, completion: nil)
-    }
    
 //    MARK : - Create Route Action
     
     func createRoutePressed(note: NSNotification){
-        self.createRouteAction()
-    }
-    
-    
-    @IBAction func createRoute(sender: AnyObject)
-    {
         self.createRouteAction()
     }
     
