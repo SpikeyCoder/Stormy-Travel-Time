@@ -33,36 +33,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faU-o3-MeY">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem image="location" id="7Gl-Ld-A23">
-                                        <connections>
-                                            <action selector="findAddress:" destination="BYZ-38-t0r" id="qEA-j6-fYl"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Yx2-Ui-abf"/>
-                                    <barButtonItem image="directions" id="J2H-cu-N9u">
-                                        <connections>
-                                            <action selector="changeTravelMode:" destination="BYZ-38-t0r" id="DYh-bt-HRs"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="sRL-RH-eaI"/>
-                                    <barButtonItem image="steering_wheel" id="sHo-lw-2GK">
-                                        <connections>
-                                            <action selector="createRoute:" destination="BYZ-38-t0r" id="xIC-TT-7ZI"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="imZ-Yp-NBn"/>
-                                    <barButtonItem image="map" id="Jio-Ke-9az">
-                                        <connections>
-                                            <action selector="changeMapType:" destination="BYZ-38-t0r" id="5c0-xq-QWc"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="tintColor" red="0.2039215714" green="0.28627452250000002" blue="0.36862745879999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="0.9529411793" green="0.61176472900000001" blue="0.070588238540000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Mx-gt-hEp" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,14 +50,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6Mx-gt-hEp" firstAttribute="top" secondItem="faU-o3-MeY" secondAttribute="bottom" id="5ZU-Zq-h1d"/>
                             <constraint firstAttribute="trailing" secondItem="XgC-bN-tST" secondAttribute="trailing" id="AkI-Lp-DFr"/>
-                            <constraint firstItem="faU-o3-MeY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DBd-8i-phG"/>
                             <constraint firstItem="XgC-bN-tST" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L8d-IH-IMT"/>
-                            <constraint firstItem="faU-o3-MeY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="RCp-Nk-boX"/>
+                            <constraint firstItem="6Mx-gt-hEp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="OJx-vJ-DPF"/>
                             <constraint firstItem="6Mx-gt-hEp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="S84-9q-GcY"/>
                             <constraint firstAttribute="bottom" secondItem="XgC-bN-tST" secondAttribute="bottom" id="Zzc-re-Mup"/>
-                            <constraint firstAttribute="trailing" secondItem="faU-o3-MeY" secondAttribute="trailing" id="dek-Vh-kia"/>
                             <constraint firstItem="XgC-bN-tST" firstAttribute="top" secondItem="6Mx-gt-hEp" secondAttribute="bottom" id="ph2-ob-hlc"/>
                             <constraint firstAttribute="trailing" secondItem="6Mx-gt-hEp" secondAttribute="trailing" id="z6o-wa-MhS"/>
                         </constraints>
@@ -96,9 +63,9 @@
                     <navigationItem key="navigationItem" title="Stormy Travel Time" id="zrE-lE-92N">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="mKK-WS-JBB"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="findAddressButton" destination="7Gl-Ld-A23" id="4s4-hG-QvQ"/>
                         <outlet property="infoLabel" destination="XgC-bN-tST" id="Sja-EM-iTW"/>
                         <outlet property="mapView" destination="6Mx-gt-hEp" id="uXd-CB-Rcu"/>
                         <outlet property="menuButton" destination="mKK-WS-JBB" id="mK9-Vt-kni"/>
@@ -131,11 +98,11 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="4" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="IO7-DC-8Bv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.8784313725490196" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="BQN-LJ-aEr">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="findAddressCell" id="Xyl-1o-7ob">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="findAddressCell" id="Xyl-1o-7ob">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xyl-1o-7ob" id="DoU-si-uYb">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -161,7 +128,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.87843137250000003" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="eEJ-Z8-F3R" firstAttribute="leading" secondItem="l42-ot-NTc" secondAttribute="trailing" constant="45" id="2Vm-mk-Awa"/>
                                                 <constraint firstAttribute="centerY" secondItem="57d-o6-P3R" secondAttribute="centerY" id="7zE-Gy-HLB"/>
@@ -173,7 +140,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelTypeCell" id="XaL-bq-GtG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="travelTypeCell" id="XaL-bq-GtG">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XaL-bq-GtG" id="8mq-hO-67j">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -199,7 +166,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.87843137250000003" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="UuY-Uc-pep" secondAttribute="centerY" id="Pbc-mz-7QD"/>
                                                 <constraint firstItem="UuY-Uc-pep" firstAttribute="width" secondItem="UuY-Uc-pep" secondAttribute="height" multiplier="1:1" id="ZVG-xw-Exd"/>
@@ -212,7 +179,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="directionsCell" id="YoZ-sX-bbp">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="directionsCell" id="YoZ-sX-bbp">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YoZ-sX-bbp" id="m0s-85-ETh">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -238,7 +205,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.87843137250000003" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="lhh-64-GTc" secondAttribute="centerX" id="06d-yv-cCQ"/>
                                                 <constraint firstAttribute="centerY" secondItem="eg3-NZ-rKd" secondAttribute="centerY" id="1Mw-1C-1o2"/>
@@ -252,7 +219,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mapTypeCell" id="4q5-Fa-yZV">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="mapTypeCell" id="4q5-Fa-yZV">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4q5-Fa-yZV" id="Arc-iG-Gbr">
@@ -279,7 +246,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.87843137250000003" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="YB7-dW-cuY" secondAttribute="centerY" id="IAz-t7-jLF"/>
                                                 <constraint firstItem="b1u-4Y-33d" firstAttribute="leading" secondItem="YB7-dW-cuY" secondAttribute="trailing" constant="64" id="MOA-22-tyG"/>
