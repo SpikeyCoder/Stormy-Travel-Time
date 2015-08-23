@@ -1,10 +1,33 @@
 PODS:
   - GoogleMaps (1.10.1)
+  - HexColors (2.2.1)
+  - LBBlurredImage (0.2.2)
+  - Mantle (2.0.4):
+    - Mantle/extobjc (= 2.0.4)
+  - Mantle/extobjc (2.0.4)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - TSMessages (0.9.12):
+    - HexColors (~> 2.2.0)
 
 DEPENDENCIES:
   - GoogleMaps
+  - LBBlurredImage
+  - Mantle
+  - ReactiveCocoa
+  - TSMessages
 
 SPEC CHECKSUMS:
   GoogleMaps: ebf08677f181d9c2dcdbd1721d206f02beccc9b1
+  HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  LBBlurredImage: 700634c17922bc2d22343118e7deb6a3ca12db43
+  Mantle: 6bee68168423948be0c0c5924832bf3af188e099
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
 
 COCOAPODS: 0.38.2

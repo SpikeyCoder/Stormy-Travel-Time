@@ -1,3 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.1'
 pod 'GoogleMaps'
+pod 'Mantle'
+pod 'LBBlurredImage'
+pod 'TSMessages'
+pod 'ReactiveCocoa'
