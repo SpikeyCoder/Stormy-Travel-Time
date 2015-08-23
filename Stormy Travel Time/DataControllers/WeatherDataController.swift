@@ -9,5 +9,18 @@
 import UIKit
 
 class WeatherDataController: NSObject {
-   
+    required override init(){
+        super.init()
+    }
+    
+    var degreesAtDestination = 0.0
+    var weatherCondition = "Cloudy"
+    
+    func weatherAtDestination() -> String {
+        return "Weather Upon Arrival: \(degreesAtDestination)\u{00B0} F, \(weatherCondition)"
+    }
+    
+    func weatherAtLocation() -> String {
+        return "Current Weather: \(degreesAtDestination)\u{00B0} F, \(weatherCondition)"
+    }
 }

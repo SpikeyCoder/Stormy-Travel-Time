@@ -38,6 +38,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     var mapTasks = MapTasks()
     
+    var weatherData = WeatherDataController()
+    
     var locationMarker: GMSMarker!
     
     var originMarker: GMSMarker!
@@ -54,10 +56,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-//        var navLayoutDict:NSDictionary = [UIColor.blackColor(),NSForegroundColorAttributeName,UIFont(descriptor: "", size: 14.0),NSFontAttributeName, nil]
-//        self.navigationBar.setValuesForKeysWithDictionary(navLayoutDict as [NSObject : AnyObject])
      
-        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
@@ -112,9 +111,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         }
         
         
-        let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-           
-        }
+        let closeAction = self.homeViewModel.closeAction()
         
         actionSheet.addAction(drivingModeAction)
         actionSheet.addAction(walkingModeAction)
@@ -133,7 +130,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                 
                 if success {
                     self.configureMapAndMarkersForRoute()
-                    self.drawRoute()
+                    self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
                     self.displayRouteInfo()
                 }
                 else {
@@ -143,7 +140,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         }
     }
     
-    func clearRoute() {
+    func clearRoute()
+    {
         originMarker.map = nil
         destinationMarker.map = nil
         routePolyline.map = nil
@@ -220,48 +218,37 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                 }
                 else
                 {
-                    let coordinate = CLLocationCoordinate2D(latitude: self.mapTasks.fetchedAddressLatitude, longitude: self.mapTasks.fetchedAddressLongitude)
+                    let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
                     self.mapView.camera = GMSCameraPosition.cameraWithTarget(coordinate, zoom: 14.0)
-                    self.setuplocationMarker(coordinate)
+                    self.homeViewModel.setupLocationMarker(self.mapTasks, mapView: self.mapView, coordinate: coordinate)
                 }
                 
             })
              self.revealViewController().revealToggleAnimated(true)
-            
+            if self.infoLabel.text == nil
+            {
+                self.infoLabel.text = self.weatherData.weatherAtLocation()
+            }
         }
         
-        
-        
-        let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-    
-        }
+        let closeAction = self.homeViewModel.closeAction()
         
         addressAlert.addAction(findAction)
         addressAlert.addAction(closeAction)
         
         presentViewController(addressAlert, animated: true, completion: nil)
-        
-
     }
    
 //    MARK : - Create Route Action
     
-    func createRoutePressed(note: NSNotification){
+    func createRoutePressed(note: NSNotification)
+    {
         self.createRouteAction()
     }
     
     func createRouteAction()
     {
-        let addressAlert = UIAlertController(title: "Create Route", message: "Connect locations with a route:", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        addressAlert.addTextFieldWithConfigurationHandler { (textField) -> Void in
-            textField.placeholder = "Origin?"
-        }
-        
-        addressAlert.addTextFieldWithConfigurationHandler { (textField) -> Void in
-            textField.placeholder = "Destination?"
-        }
-        
+        let addressAlert = self.homeViewModel.configureRouteAlert()
         
         let createRouteAction = UIAlertAction(title: "Create Route", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             let origin = (addressAlert.textFields![0] as! UITextField).text as String
@@ -270,7 +257,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             self.mapTasks.getDirections(origin, destination: destination, waypoints: nil, travelMode: nil, completionHandler: { (status, success) -> Void in
                 if success {
                     self.configureMapAndMarkersForRoute()
-                    self.drawRoute()
+                    self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
                     self.displayRouteInfo()
                 }
                 else {
@@ -279,13 +266,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             })
             self.revealViewController().revealToggleAnimated(true)
         }
-        
-        
-        
-        let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            
-        }
-        
+
+        let closeAction = self.homeViewModel.closeAction()
         addressAlert.addAction(createRouteAction)
         addressAlert.addAction(closeAction)
         
@@ -306,19 +288,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         destinationMarker.title = self.mapTasks.destinationAddress
     }
     
-    func drawRoute()
-    {
-        let route = mapTasks.overviewPolyline["points"] as! String
-        
-        let path: GMSPath = GMSPath(fromEncodedPath: route)
-        routePolyline = GMSPolyline(path: path)
-        routePolyline.map = mapView
-        
-    }
-    
     func displayRouteInfo()
     {
-        infoLabel.text = mapTasks.totalDistance + "\n" + mapTasks.totalDuration
+        infoLabel.text = mapTasks.totalDistance + "\n" + mapTasks.totalDuration + "\n" + self.weatherData.weatherAtDestination()
     }
 
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -336,19 +308,4 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             didFindMyLocation = true
         }
     }
-    
-    func setuplocationMarker(coordinate: CLLocationCoordinate2D) {
-        locationMarker = GMSMarker(position: coordinate)
-        locationMarker.map = mapView
-        
-        locationMarker.title = mapTasks.fetchedFormattedAddress
-        locationMarker.appearAnimation = kGMSMarkerAnimationPop
-        locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
-        locationMarker.opacity = 0.75
-        
-        locationMarker.flat = false
-        locationMarker.snippet = "The best place on earth."
-    }
-
-
 }

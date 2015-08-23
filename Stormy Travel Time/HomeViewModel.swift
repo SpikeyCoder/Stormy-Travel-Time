@@ -21,8 +21,6 @@ class HomeViewModel: NSObject
     
     var travelMode = TravelModes.driving
     
-    var mapTasks = MapTasks()
-    
     var locationMarker: GMSMarker!
     
     var originMarker: GMSMarker!
@@ -50,6 +48,55 @@ class HomeViewModel: NSObject
         
         return alertController
         
+    }
+    
+    func getCoordinate(mapTask:MapTasks) -> CLLocationCoordinate2D
+    {
+        return CLLocationCoordinate2D(latitude: mapTask.fetchedAddressLatitude, longitude: mapTask.fetchedAddressLongitude)
+    }
+    
+    func setupLocationMarker(mapTasks:MapTasks, mapView:GMSMapView, coordinate: CLLocationCoordinate2D)
+    {
+        locationMarker = GMSMarker(position: coordinate)
+        locationMarker.map = mapView
+        
+        locationMarker.title = mapTasks.fetchedFormattedAddress
+        locationMarker.appearAnimation = kGMSMarkerAnimationPop
+        locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+        locationMarker.opacity = 0.75
+        
+        locationMarker.flat = false
+        locationMarker.snippet = "The best place on earth."
+    }
+    
+    func drawRoute(mapTasks:MapTasks, mapView:GMSMapView)
+    {
+        let route = mapTasks.overviewPolyline["points"] as! String
+        
+        let path: GMSPath = GMSPath(fromEncodedPath: route)
+        routePolyline = GMSPolyline(path: path)
+        routePolyline.map = mapView
+    }
+    
+    func configureRouteAlert() -> UIAlertController
+    {
+        let addressAlert = UIAlertController(title: "Create Route", message: "Connect locations with a route:", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        addressAlert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Origin?"
+        }
+        
+        addressAlert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Destination?"
+        }
+        return addressAlert
+    }
+    
+    func closeAction() -> UIAlertAction {
+        let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
+            
+        }
+        return closeAction
     }
     
     
