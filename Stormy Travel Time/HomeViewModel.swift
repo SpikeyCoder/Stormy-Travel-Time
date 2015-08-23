@@ -69,6 +69,19 @@ class HomeViewModel: NSObject
         locationMarker.snippet = "The best place on earth."
     }
     
+    func configureMapAndMarkersForRoute(mapTasks:MapTasks, mapView:GMSMapView)
+    {
+        originMarker = GMSMarker(position: mapTasks.originCoordinate)
+        originMarker.map = mapView
+        originMarker.icon = GMSMarker.markerImageWithColor(UIColor.greenColor())
+        originMarker.title = mapTasks.originAddress
+        
+        destinationMarker = GMSMarker(position:mapTasks.destinationCoordinate)
+        destinationMarker.map = mapView
+        destinationMarker.icon = GMSMarker.markerImageWithColor(UIColor.redColor())
+        destinationMarker.title = mapTasks.destinationAddress
+    }
+    
     func drawRoute(mapTasks:MapTasks, mapView:GMSMapView)
     {
         let route = mapTasks.overviewPolyline["points"] as! String

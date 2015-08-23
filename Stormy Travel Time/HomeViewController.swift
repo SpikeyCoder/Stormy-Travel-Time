@@ -35,8 +35,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     var didFindMyLocation = false
     
-    var markersArray: Array<GMSMarker> = []
-    
     var waypointsArray: Array<String> = []
     
     var travelMode = TravelModes.driving
@@ -46,10 +44,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     var weatherData = WeatherDataController()
     
     var locationMarker: GMSMarker!
-    
-    var originMarker: GMSMarker!
-    
-    var destinationMarker: GMSMarker!
     
     var routePolyline: GMSPolyline!
     
@@ -144,7 +138,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                 
                 if success
                 {
-                    self.configureMapAndMarkersForRoute()
+                    self.homeViewModel.configureMapAndMarkersForRoute(self.mapTasks, mapView: self.mapView)
                     self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
                     self.displayRouteInfo()
                 }
@@ -247,7 +241,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             self.mapTasks.getDirections(origin, destination: destination, waypoints: nil, travelMode: nil, completionHandler: { (status, success) -> Void in
                 if success
                 {
-                    self.configureMapAndMarkersForRoute()
+                    self.homeViewModel.configureMapAndMarkersForRoute(self.mapTasks, mapView: self.mapView)
                     self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
                     self.displayRouteInfo()
                 }
@@ -267,19 +261,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         
         presentViewController(addressAlert, animated: true, completion: nil)
 
-    }
-
-    func configureMapAndMarkersForRoute()
-    {
-        originMarker = GMSMarker(position: self.mapTasks.originCoordinate)
-        originMarker.map = self.mapView
-        originMarker.icon = GMSMarker.markerImageWithColor(UIColor.greenColor())
-        originMarker.title = self.mapTasks.originAddress
-        
-        destinationMarker = GMSMarker(position: self.mapTasks.destinationCoordinate)
-        destinationMarker.map = self.mapView
-        destinationMarker.icon = GMSMarker.markerImageWithColor(UIColor.redColor())
-        destinationMarker.title = self.mapTasks.destinationAddress
     }
     
     func displayRouteInfo()
