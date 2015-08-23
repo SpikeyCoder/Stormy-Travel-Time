@@ -174,7 +174,7 @@ class MapTasks: NSObject
         
         let distanceInKilometers: Double = Double(totalDistanceInMeters)
         let distanceInMiles: Double = Double(distanceInKilometers * 0.000621371 )
-        totalDistance = "Total Distance: \(distanceInMiles) miles"
+        totalDistance = "Total Distance: \(distanceInMiles.formatted) miles"
         
         
         let mins = totalDurationInSeconds / 60
@@ -202,5 +202,17 @@ class MapTasks: NSObject
         }
         
         totalDuration = infoTimeString
+    }
+}
+
+extension Double
+{
+    var formatted:String
+        {
+            let formatter = NSNumberFormatter()
+            formatter.numberStyle = .DecimalStyle
+            formatter.minimumFractionDigits = 2
+            formatter.maximumFractionDigits = 2
+            return formatter.stringFromNumber(self)!
     }
 }

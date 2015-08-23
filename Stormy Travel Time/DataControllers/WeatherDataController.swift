@@ -13,14 +13,14 @@ class WeatherDataController: NSObject {
         super.init()
     }
     
-    var degreesAtDestination = 0.0
-    var weatherCondition = "Cloudy"
+    var degreesAtDestination = 75.0
+    var weatherCondition = "Sunny"
     
     func weatherAtDestination() -> String {
-        return "Weather Upon Arrival: \(degreesAtDestination)\u{00B0} F, \(weatherCondition)"
+        return "Weather Upon Arrival: \(degreesAtDestination)\u{00B0} F"
     }
     
     func weatherAtLocation() -> String {
-        return "Current Weather: \(degreesAtDestination)\u{00B0} F, \(weatherCondition)"
+        return "Current Weather: \(degreesAtDestination)\u{00B0} F"
     }
 }

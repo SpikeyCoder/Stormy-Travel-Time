@@ -78,6 +78,26 @@ class HomeViewModel: NSObject
         routePolyline.map = mapView
     }
     
+    func clearRoute()
+    {
+        originMarker.map = nil
+        destinationMarker.map = nil
+        routePolyline.map = nil
+        
+        originMarker = nil
+        destinationMarker = nil
+        routePolyline = nil
+        
+        if markersArray.count > 0 {
+            for marker in markersArray {
+                marker.map = nil
+            }
+            
+            markersArray.removeAll(keepCapacity: false)
+        }
+    }
+    
+    
     func configureRouteAlert() -> UIAlertController
     {
         let addressAlert = UIAlertController(title: "Create Route", message: "Connect locations with a route:", preferredStyle: UIAlertControllerStyle.Alert)
@@ -142,6 +162,12 @@ class HomeViewModel: NSObject
         revealVC.stableDragOnOverdraw = true
     }
     
-    
-    
+    func setWeatherImage(weatherCondition:String) -> UIImage
+    {
+        let weatherString = weatherCondition.lowercaseString
+        let weatherIcon = UIImage(named: weatherString)
+        return weatherIcon!
+    }
 }
+
+

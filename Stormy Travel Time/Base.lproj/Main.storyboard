@@ -52,9 +52,18 @@
                                 <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny" translatesAutoresizingMaskIntoConstraints="NO" id="Jj4-kM-bHv" userLabel="weatherIcon">
+                                <rect key="frame" x="490" y="554" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="0ri-4K-r1K"/>
+                                    <constraint firstAttribute="width" secondItem="Jj4-kM-bHv" secondAttribute="height" multiplier="1:1" id="sgn-UQ-b6j"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Jj4-kM-bHv" secondAttribute="bottom" constant="16" id="4re-Xj-7nx"/>
+                            <constraint firstAttribute="trailing" secondItem="Jj4-kM-bHv" secondAttribute="trailing" constant="80" id="A3c-6o-gpf"/>
                             <constraint firstAttribute="trailing" secondItem="XgC-bN-tST" secondAttribute="trailing" id="AkI-Lp-DFr"/>
                             <constraint firstItem="XgC-bN-tST" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L8d-IH-IMT"/>
                             <constraint firstItem="6Mx-gt-hEp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="OJx-vJ-DPF"/>
@@ -75,6 +84,9 @@
                         <outlet property="mapView" destination="6Mx-gt-hEp" id="uXd-CB-Rcu"/>
                         <outlet property="menuButton" destination="mKK-WS-JBB" id="mK9-Vt-kni"/>
                         <outlet property="navigationBar" destination="zrE-lE-92N" id="4Wn-zY-d5P"/>
+                        <outlet property="weatherIcon" destination="Jj4-kM-bHv" id="GWi-ZI-40X"/>
+                        <outlet property="weatherIconBottomConstraint" destination="4re-Xj-7nx" id="amE-XT-0s3"/>
+                        <outlet property="weatherIconRightConstraint" destination="A3c-6o-gpf" id="3el-Tc-6uj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -249,5 +261,6 @@
         <image name="map" width="25" height="25"/>
         <image name="menu" width="22" height="22"/>
         <image name="steering_wheel" width="25" height="25"/>
+        <image name="sunny" width="25" height="25"/>
     </resources>
 </document>

@@ -22,8 +22,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     @IBOutlet weak var findAddressButton: UIBarButtonItem!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var weatherIconBottomConstraint: NSLayoutConstraint!
+   
+    @IBOutlet weak var weatherIconRightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var navigationBar: UINavigationItem!
     
+    @IBOutlet weak var weatherIcon: UIImageView!
     var locationManager = CLLocationManager()
     
     var homeViewModel = HomeViewModel()
@@ -57,6 +62,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.homeViewModel.configureRevealVC(self.revealViewController())
+            self.weatherIcon.hidden = true
         }
      
         locationManager.delegate = self
@@ -132,7 +138,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     {
         if let polyline = routePolyline
         {
-            clearRoute()
+            self.homeViewModel.clearRoute()
             
             mapTasks.getDirections(mapTasks.originAddress, destination: mapTasks.destinationAddress, waypoints: waypointsArray, travelMode: nil, completionHandler: { (status, success) -> Void in
                 
@@ -147,25 +153,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                     println(status)
                 }
             })
-        }
-    }
-    
-    func clearRoute()
-    {
-        originMarker.map = nil
-        destinationMarker.map = nil
-        routePolyline.map = nil
-        
-        originMarker = nil
-        destinationMarker = nil
-        routePolyline = nil
-        
-        if markersArray.count > 0 {
-            for marker in markersArray {
-                marker.map = nil
-            }
-            
-            markersArray.removeAll(keepCapacity: false)
         }
     }
     
@@ -226,12 +213,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                 }
                 
             })
-             self.revealViewController().revealToggleAnimated(true)
             
-            if self.infoLabel.text == nil
+            if self.infoLabel.text!.rangeOfString("Total Distance") == nil
             {
                 self.infoLabel.text = self.weatherData.weatherAtLocation()
             }
+            self.revealWeatherIcon()
         }
         
         let closeAction = self.homeViewModel.closeAction()
@@ -269,7 +256,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                     println(status)
                 }
             })
-            self.revealViewController().revealToggleAnimated(true)
+            self.weatherIconBottomConstraint.constant = 0
+            self.weatherIconRightConstraint.constant = 70
+            self.revealWeatherIcon()
         }
 
         let closeAction = self.homeViewModel.closeAction()
@@ -316,5 +305,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             
             didFindMyLocation = true
         }
+    }
+    
+    func revealWeatherIcon()
+    {
+        self.weatherIcon.image = self.homeViewModel.setWeatherImage(self.weatherData.weatherCondition)
+        self.weatherIcon.hidden = false
+        self.revealViewController().revealToggleAnimated(true)
+        self.view.layoutIfNeeded()
     }
 }
