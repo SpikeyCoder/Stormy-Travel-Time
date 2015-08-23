@@ -51,10 +51,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if self.revealViewController() != nil {
+        if self.revealViewController() != nil
+        {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.homeViewModel.configureRevealVC(self.revealViewController())
         }
      
         locationManager.delegate = self
@@ -65,7 +67,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         
     }
     
-    private func registerForNotifications(){
+    private func registerForNotifications()
+    {
         mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "findAddressCellPressed:", name: "com.StormyTravelTime.findAddress", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeMapTypePressed:", name: "com.StormyTravelTime.mapType", object: nil)
@@ -74,7 +77,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
        
     }
 
-    deinit{
+    deinit
+    {
         NSNotificationCenter.defaultCenter().removeObserver(self, forKeyPath: "myLocation")
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
@@ -94,20 +98,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         
         let drivingModeAction = UIAlertAction(title: "Driving", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.travelMode = TravelModes.driving
-            self.recreateRoute()
-             self.revealViewController().revealToggleAnimated(true)
+            self.dismissAndRecreateRoute()
         }
         
         let walkingModeAction = UIAlertAction(title: "Walking", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.travelMode = TravelModes.walking
-            self.recreateRoute()
-             self.revealViewController().revealToggleAnimated(true)
+            self.dismissAndRecreateRoute()
         }
         
         let bicyclingModeAction = UIAlertAction(title: "Bicycling", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.travelMode = TravelModes.bicycling
-            self.recreateRoute()
-             self.revealViewController().revealToggleAnimated(true)
+            self.dismissAndRecreateRoute()
         }
         
         
@@ -121,19 +122,28 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         presentViewController(actionSheet, animated: true, completion: nil)
     }
     
+    func dismissAndRecreateRoute()
+    {
+        self.recreateRoute()
+        self.revealViewController().revealToggleAnimated(true)
+    }
     
-    func recreateRoute() {
-        if let polyline = routePolyline {
+    func recreateRoute()
+    {
+        if let polyline = routePolyline
+        {
             clearRoute()
             
             mapTasks.getDirections(mapTasks.originAddress, destination: mapTasks.destinationAddress, waypoints: waypointsArray, travelMode: nil, completionHandler: { (status, success) -> Void in
                 
-                if success {
+                if success
+                {
                     self.configureMapAndMarkersForRoute()
                     self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
                     self.displayRouteInfo()
                 }
-                else {
+                else
+                {
                     println(status)
                 }
             })
@@ -159,32 +169,22 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         }
     }
     
-    func changeMapTypePressed(note:NSNotification){
+    func changeMapTypePressed(note:NSNotification)
+    {
         self.mapTypeAction()
     }
     
     func mapTypeAction()
     {
-        let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let actionSheet = self.homeViewModel.getMapTypeAlert()
         
-        let normalMapTypeAction = UIAlertAction(title: "Normal", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            self.mapView.mapType = kGMSTypeNormal
-             self.revealViewController().revealToggleAnimated(true)
-        }
+        let normalMapTypeAction = self.homeViewModel.getNormalMap(self.mapView, revealVC: self.revealViewController())
         
-        let terrainMapTypeAction = UIAlertAction(title: "Terrain", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            self.mapView.mapType = kGMSTypeTerrain
-             self.revealViewController().revealToggleAnimated(true)
-        }
+        let terrainMapTypeAction = self.homeViewModel.getTerrainMap(self.mapView, revealVC: self.revealViewController())
         
-        let hybridMapTypeAction = UIAlertAction(title: "Hybrid", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            self.mapView.mapType = kGMSTypeHybrid
-             self.revealViewController().revealToggleAnimated(true)
-        }
+        let hybridMapTypeAction = self.homeViewModel.getHybridMap(self.mapView, revealVC: self.revealViewController())
         
-        let cancelAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            
-        }
+        let cancelAction = self.homeViewModel.closeAction()
         
         actionSheet.addAction(normalMapTypeAction)
         actionSheet.addAction(terrainMapTypeAction)
@@ -199,7 +199,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     {
         let addressAlert = UIAlertController(title: "Address Finder", message: "Type the address you want to find:", preferredStyle: UIAlertControllerStyle.Alert)
         
-        addressAlert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+        addressAlert.addTextFieldWithConfigurationHandler{ (textField) -> Void in
             textField.placeholder = "Address?"
         }
         
@@ -208,10 +208,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             
             self.mapTasks.geocodeAddress(address, withCompletionHandler: { (status, success) -> Void in
                 
-                if !success {
+                if !success
+                {
                     println(status)
                     
-                    if status == "ZERO_RESULTS" {
+                    if status == "ZERO_RESULTS"
+                    {
                         var alert = self.homeViewModel.showAlertWithMessage("The location could not be found.")
                         self.presentViewController(alert, animated: true, completion: nil)
                     }
@@ -225,6 +227,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                 
             })
              self.revealViewController().revealToggleAnimated(true)
+            
             if self.infoLabel.text == nil
             {
                 self.infoLabel.text = self.weatherData.weatherAtLocation()
@@ -255,12 +258,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             let destination = (addressAlert.textFields![1] as! UITextField).text as String
             
             self.mapTasks.getDirections(origin, destination: destination, waypoints: nil, travelMode: nil, completionHandler: { (status, success) -> Void in
-                if success {
+                if success
+                {
                     self.configureMapAndMarkersForRoute()
                     self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
                     self.displayRouteInfo()
                 }
-                else {
+                else
+                {
                     println(status)
                 }
             })
@@ -293,14 +298,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         infoLabel.text = mapTasks.totalDistance + "\n" + mapTasks.totalDuration + "\n" + self.weatherData.weatherAtDestination()
     }
 
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == CLAuthorizationStatus.AuthorizedWhenInUse {
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus)
+    {
+        if status == CLAuthorizationStatus.AuthorizedWhenInUse
+        {
             mapView.myLocationEnabled = true
         }
     }
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        if !didFindMyLocation {
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>)
+    {
+        if !didFindMyLocation
+        {
             let myLocation: CLLocation = change[NSKeyValueChangeNewKey] as! CLLocation
             mapView.camera = GMSCameraPosition.cameraWithTarget(myLocation.coordinate, zoom: 10.0)
             mapView.settings.myLocationButton = true

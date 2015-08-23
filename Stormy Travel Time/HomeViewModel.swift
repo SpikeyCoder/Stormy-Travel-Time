@@ -99,6 +99,49 @@ class HomeViewModel: NSObject
         return closeAction
     }
     
+    func getMapTypeAlert() -> UIAlertController {
+        let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        return actionSheet
+    }
+    
+    func getNormalMap(mapView:GMSMapView, revealVC:SWRevealViewController) -> UIAlertAction
+    {
+        let normalMapTypeAction = UIAlertAction(title: "Normal", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+            mapView.mapType = kGMSTypeNormal
+            revealVC.revealToggleAnimated(true)
+        }
+        return normalMapTypeAction
+
+    }
+    
+    func getTerrainMap(mapView:GMSMapView, revealVC:SWRevealViewController) -> UIAlertAction
+    {
+        let terrainMapTypeAction = UIAlertAction(title: "Terrain", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+            mapView.mapType = kGMSTypeTerrain
+            revealVC.revealToggleAnimated(true)
+        }
+        return terrainMapTypeAction
+        
+    }
+    
+    func getHybridMap(mapView:GMSMapView, revealVC:SWRevealViewController) -> UIAlertAction
+    {
+        let hybridMapTypeAction = UIAlertAction(title: "Hybrid", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+            mapView.mapType = kGMSTypeHybrid
+            revealVC.revealToggleAnimated(true)
+        }
+        return hybridMapTypeAction
+        
+    }
+    
+    func configureRevealVC(revealVC:SWRevealViewController)
+    {
+        revealVC.bounceBackOnLeftOverdraw = true
+        revealVC.bounceBackOnOverdraw = true
+        revealVC.stableDragOnLeftOverdraw = true
+        revealVC.stableDragOnOverdraw = true
+    }
+    
     
     
 }

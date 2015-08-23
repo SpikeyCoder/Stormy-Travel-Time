@@ -19,13 +19,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../SWRevealViewController/SWRevealViewController/SWRevealViewController.m"
-            timestampString = "461958591.285352"
+            filePath = "Stormy Travel Time/HomeViewModel.swift"
+            timestampString = "462015716.337302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "863"
-            endingLineNumber = "863"
-            landmarkName = "-setFrontViewPosition:"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "getHybridMap(_:revealVC:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Stormy_Travel_Time.HomeViewModel.getHybridMap (Stormy_Travel_Time.HomeViewModel)(ObjectiveC.GMSMapView, revealVC : ObjectiveC.SWRevealViewController) -&gt; ObjectiveC.UIAlertAction"
+                  moduleName = "Stormy Travel Time"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kstrong/Stormy-Travel-Time/Stormy%20Travel%20Time/HomeViewModel.swift"
+                  timestampString = "462015716.344453"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Stormy_Travel_Time.HomeViewModel.(getHybridMap (Stormy_Travel_Time.HomeViewModel) -&gt; (ObjectiveC.GMSMapView, revealVC : ObjectiveC.SWRevealViewController) -&gt; ObjectiveC.UIAlertAction).(closure #1)"
+                  moduleName = "Stormy Travel Time"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kstrong/Stormy-Travel-Time/Stormy%20Travel%20Time/HomeViewModel.swift"
+                  timestampString = "462015716.344672"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stormy Travel Time/HomeViewModel.swift"
+            timestampString = "462015764.549218"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "getHybridMap(_:revealVC:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,13 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../SWRevealViewController/SWRevealViewController/SWRevealViewController.m"
-            timestampString = "461958619.462387"
+            filePath = "Stormy Travel Time/HomeViewModel.swift"
+            timestampString = "462015832.085617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1670"
-            endingLineNumber = "1670"
-            landmarkName = "-_transitionFromViewController:toViewController:inView:"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "getTerrainMap(_:revealVC:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,110 +99,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../SWRevealViewController/SWRevealViewController/SWRevealViewController.m"
-            timestampString = "461958631.55156"
+            filePath = "Stormy Travel Time/HomeViewModel.swift"
+            timestampString = "462015903.23043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1653"
-            endingLineNumber = "1653"
-            landmarkName = "-_undeployForViewController:"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "getTerrainMap(_:revealVC:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../SWRevealViewController/SWRevealViewController/SWRevealViewController.m"
-            timestampString = "461958645.070066"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1581"
-            endingLineNumber = "1581"
-            landmarkName = "-_rightViewDeploymentForNewFrontViewPosition:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../SWRevealViewController/SWRevealViewController/SWRevealViewController.m"
-            timestampString = "461958650.304836"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1550"
-            endingLineNumber = "1550"
-            landmarkName = "-_rearViewDeploymentForNewFrontViewPosition:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../SWRevealViewController/SWRevealViewController/SWRevealViewController.m"
-            timestampString = "461958656.02355"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1508"
-            endingLineNumber = "1508"
-            landmarkName = "-_frontViewDeploymentForNewFrontViewPosition:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../SWRevealViewController/SWRevealViewController/SWRevealViewController.m"
-            timestampString = "461958667.131062"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1451"
-            endingLineNumber = "1451"
-            landmarkName = "-_performTransitionOperation:withViewController:animated:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../SWRevealViewController/SWRevealViewController/SWRevealViewController.m"
-            timestampString = "461958672.41552"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1401"
-            endingLineNumber = "1401"
-            landmarkName = "-_setFrontViewPosition:withDuration:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../SWRevealViewController/SWRevealViewController/SWRevealViewController.m"
-            timestampString = "461958678.83595"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1357"
-            endingLineNumber = "1357"
-            landmarkName = "-_dispatchSetFrontViewPosition:animated:"
-            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Stormy_Travel_Time.HomeViewModel.getTerrainMap (Stormy_Travel_Time.HomeViewModel)(ObjectiveC.GMSMapView, revealVC : ObjectiveC.SWRevealViewController) -&gt; ObjectiveC.UIAlertAction"
+                  moduleName = "Stormy Travel Time"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kstrong/Stormy-Travel-Time/Stormy%20Travel%20Time/HomeViewModel.swift"
+                  timestampString = "462015903.233104"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Stormy_Travel_Time.HomeViewModel.(getTerrainMap (Stormy_Travel_Time.HomeViewModel) -&gt; (ObjectiveC.GMSMapView, revealVC : ObjectiveC.SWRevealViewController) -&gt; ObjectiveC.UIAlertAction).(closure #1)"
+                  moduleName = "Stormy Travel Time"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kstrong/Stormy-Travel-Time/Stormy%20Travel%20Time/HomeViewModel.swift"
+                  timestampString = "462015903.233277"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
