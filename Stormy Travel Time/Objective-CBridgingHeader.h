@@ -9,5 +9,14 @@
 #ifndef Stormy_Travel_Time_Objective_CBridgingHeader_h
 #define Stormy_Travel_Time_Objective_CBridgingHeader_h
 #import "SWRevealViewController.h"
+#import "MTLModel.h"
+#import "Mantle.h"
+#import "WXManager.h"
+#import "WXCondition.h"
+#import "WXDailyForecast.h"
+#import "ReactiveCocoa.h"
+@import CoreLocation;
+
+
 
 #endif
