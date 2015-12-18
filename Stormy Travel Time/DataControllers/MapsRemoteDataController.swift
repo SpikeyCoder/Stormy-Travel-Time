@@ -25,7 +25,7 @@ class MapsRemoteDataController: NSObject
     
     func geocodeAddress(address: String!, withCompletionHandler completionHandler: ((status: String, success: Bool) -> Void))
     {
-           var counting = count(self.fetchedFormattedAddress)
+           var counting = self.fetchedFormattedAddress.characters.count
         if let lookupAddress = address {
             var geocodeURLString = self.baseURLGeocode
         }

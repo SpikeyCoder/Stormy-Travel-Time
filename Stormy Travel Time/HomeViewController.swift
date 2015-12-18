@@ -144,7 +144,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                 }
                 else
                 {
-                    println(status)
+                    print(status)
                 }
             })
         }
@@ -185,28 +185,30 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         }
         
         let findAction = UIAlertAction(title: "Find Address", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            let address = (addressAlert.textFields![0] as! UITextField).text as String
-            
-            self.mapTasks.geocodeAddress(address, withCompletionHandler: { (status, success) -> Void in
-                
-                if !success
-                {
-                    println(status)
+            if let addressTextFields:[UITextField] = addressAlert.textFields, addressTextField:UITextField = addressTextFields[0], address:String = addressTextField.text
+            {
+                        self.mapTasks.geocodeAddress(address, withCompletionHandler: { (status, success) -> Void in
                     
-                    if status == "ZERO_RESULTS"
+                    if !success
                     {
-                        var alert = self.homeViewModel.showAlertWithMessage("The location could not be found.")
-                        self.presentViewController(alert, animated: true, completion: nil)
+                        print(status)
+                        
+                        if status == "ZERO_RESULTS"
+                        {
+                            let alert = self.homeViewModel.showAlertWithMessage("The location could not be found.")
+                            self.presentViewController(alert, animated: true, completion: nil)
+                        }
                     }
-                }
-                else
-                {
-                    let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
-                    self.mapView.camera = GMSCameraPosition.cameraWithTarget(coordinate, zoom: 14.0)
-                    self.homeViewModel.setupLocationMarker(self.mapTasks, mapView: self.mapView, coordinate: coordinate)
-                }
-                
-            })
+                    else
+                    {
+                        let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
+                        self.mapView.camera = GMSCameraPosition.cameraWithTarget(coordinate, zoom: 14.0)
+                        self.homeViewModel.setupLocationMarker(self.mapTasks, mapView: self.mapView, coordinate: coordinate)
+                    }
+                    
+                })
+            }
+            
             
             if self.infoLabel.text!.rangeOfString("Total Distance") == nil
             {
@@ -235,8 +237,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         let addressAlert = self.homeViewModel.configureRouteAlert()
         
         let createRouteAction = UIAlertAction(title: "Create Route", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            let origin = (addressAlert.textFields![0] as! UITextField).text as String
-            let destination = (addressAlert.textFields![1] as! UITextField).text as String
+            let origin = (addressAlert.textFields![0] as! UITextField).text! as String
+            let destination = (addressAlert.textFields![1] as! UITextField).text! as String
             
             self.mapTasks.getDirections(origin, destination: destination, waypoints: nil, travelMode: nil, completionHandler: { (status, success) -> Void in
                 if success
@@ -247,7 +249,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                 }
                 else
                 {
-                    println(status)
+                    print(status)
                 }
             })
             self.weatherIconBottomConstraint.constant = 0
@@ -268,7 +270,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         infoLabel.text = mapTasks.totalDistance + "\n" + mapTasks.totalDuration + "\n" + self.weatherData.weatherAtDestination()
     }
 
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus)
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus)
     {
         if status == CLAuthorizationStatus.AuthorizedWhenInUse
         {
@@ -276,11 +278,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         }
     }
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>)
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>)
     {
         if !didFindMyLocation
         {
-            let myLocation: CLLocation = change[NSKeyValueChangeNewKey] as! CLLocation
+            let myLocation: CLLocation = change![NSKeyValueChangeNewKey] as! CLLocation
             mapView.camera = GMSCameraPosition.cameraWithTarget(myLocation.coordinate, zoom: 10.0)
             mapView.settings.myLocationButton = true
             
