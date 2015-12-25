@@ -62,7 +62,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(48.857165, longitude: 2.354613,zoom: 8.0)
         self.registerForNotifications()
         
     }
@@ -130,7 +129,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     func recreateRoute()
     {
-        if let polyline = routePolyline
+        if self.routePolyline != nil
         {
             self.homeViewModel.clearRoute()
             
@@ -237,8 +236,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         let addressAlert = self.homeViewModel.configureRouteAlert()
         
         let createRouteAction = UIAlertAction(title: "Create Route", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            let origin = (addressAlert.textFields![0] as! UITextField).text! as String
-            let destination = (addressAlert.textFields![1] as! UITextField).text! as String
+            let origin = (addressAlert.textFields![0] ).text! as String
+            let destination = (addressAlert.textFields![1] ).text! as String
             
             self.mapTasks.getDirections(origin, destination: destination, waypoints: nil, travelMode: nil, completionHandler: { (status, success) -> Void in
                 if success

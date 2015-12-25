@@ -50,7 +50,7 @@ class MapTasks: NSObject
     func geocodeAddress(address: String!, withCompletionHandler completionHandler: ((status: String, success: Bool) -> Void)) {
         if let lookupAddress = address {
             var geocodeURLString = baseURLGeocode + "address=" + lookupAddress
-            geocodeURLString = geocodeURLString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            geocodeURLString = geocodeURLString.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
             
             let geocodeURL = NSURL(string: geocodeURLString)
              do {
