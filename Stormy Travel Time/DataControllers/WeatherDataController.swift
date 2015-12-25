@@ -69,15 +69,10 @@ class WeatherDataController: NSObject {
     func fetchCurrentConditionsForLocation(coordinate:CLLocationCoordinate2D)-> RACSignal
     {
         let urlString = NSString(format: "http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=imperial", coordinate.latitude, coordinate.longitude)
-        let url = NSURL(string: urlString as String)
+        let url = NSURL(string: urlString as String)!
         
-        let signal:RACSignal! = self.fetchJSONFromURL(url!)
-      
-//        var condition:WXCondition!
-        let json:AnyObject!
-        let signal2: AnyObject! = try? MTLJSONAdapter.modelOfClass(WXCondition.self, fromJSONDictionary: json as! [NSObject : AnyObject])
-        return signal.map({ (json) -> AnyObject! in
-            return signal2
+        return self.fetchJSONFromURL(url).map({ json in
+            return try? MTLJSONAdapter.modelOfClass(WXCondition.self, fromJSONDictionary: json as! [NSObject:AnyObject])
         })
         
     }
@@ -88,21 +83,18 @@ class WeatherDataController: NSObject {
         let url = NSURL(string: urlString as String)
         
         let signal:RACSignal! = self.fetchJSONFromURL(url!)
-        
-//        var condition:WXCondition!
-        let json:AnyObject!
-        let signal2: AnyObject! = try? MTLJSONAdapter.modelOfClass(WXCondition.self, fromJSONDictionary: json as! [NSObject : AnyObject])
+
         return signal.map(
-            { (json) -> AnyObject! in
+            { json in
                 if let jsonObj = json as? [NSObject : AnyObject]
                 {
                     let list:RACSequence = jsonObj["list"]!.rac_sequence
-                    return list.map({ (json) -> AnyObject! in
-                        return signal2
+                    return list.map({ json in
+                        return try? MTLJSONAdapter.modelOfClass(WXCondition.self, fromJSONDictionary: json as! [NSObject : AnyObject])
                     })
 
                 }
-                return signal2
+                return try? MTLJSONAdapter.modelOfClass(WXCondition.self, fromJSONDictionary: json as! [NSObject : AnyObject])
         })
 
     }
@@ -113,19 +105,16 @@ class WeatherDataController: NSObject {
         
         let signal:RACSignal! = self.fetchJSONFromURL(url!)
         
-//        var condition:WXCondition!
-        let json:AnyObject!
-        let signal2: AnyObject! = try? MTLJSONAdapter.modelOfClass(WXDailyForecast.self, fromJSONDictionary: json as! [NSObject : AnyObject])
         return signal.map(
-            { (json) -> AnyObject! in
+            { json in
                 if let jsonObj = json as? [NSObject : AnyObject]
                 {
                     let list:RACSequence = jsonObj["list"]!.rac_sequence
-                    return list.map({ (json) -> AnyObject! in
-                        return signal2
+                    return list.map({ json in
+                        return try? MTLJSONAdapter.modelOfClass(WXDailyForecast.self, fromJSONDictionary: json as! [NSObject : AnyObject])
                     })
                 }
-                return signal2
+                return try? MTLJSONAdapter.modelOfClass(WXDailyForecast.self, fromJSONDictionary: json as! [NSObject : AnyObject])
         })
     }
 }
