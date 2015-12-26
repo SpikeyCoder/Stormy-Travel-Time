@@ -13,6 +13,8 @@ class MapTasks: NSObject
 {
     let baseURLGeocode = "https://maps.googleapis.com/maps/api/geocode/json?"
     
+    let apiKey = "&key=AIzaSyA5Kx1uY8RvzsW309wdYhsCYb2an3_Jadk"
+    
     var lookupAddressResults: Dictionary<NSObject, AnyObject>!
     
     var fetchedFormattedAddress: String!
@@ -51,8 +53,8 @@ class MapTasks: NSObject
     {
         if let lookupAddress = address
         {
-            var geocodeURLString = baseURLGeocode + "address=" + lookupAddress
-            geocodeURLString = geocodeURLString.stringByAddingPercentEncodingWithAllowedCharacters(.URLPathAllowedCharacterSet())!
+            var geocodeURLString = self.baseURLGeocode + "address=" + lookupAddress + self.apiKey
+            geocodeURLString = geocodeURLString.stringByAddingPercentEncodingWithAllowedCharacters(.URLFragmentAllowedCharacterSet())!
             
             if let geocodeURL:NSURL = NSURL(string: geocodeURLString){
             
