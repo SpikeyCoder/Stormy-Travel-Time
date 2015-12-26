@@ -47,51 +47,59 @@ class MapTasks: NSObject
         super.init()
     }
     
-    func geocodeAddress(address: String!, withCompletionHandler completionHandler: ((status: String, success: Bool) -> Void)) {
-        if let lookupAddress = address {
+    func geocodeAddress(address: String!, withCompletionHandler completionHandler: ((status: String, success: Bool) -> Void))
+    {
+        if let lookupAddress = address
+        {
             var geocodeURLString = baseURLGeocode + "address=" + lookupAddress
-            geocodeURLString = geocodeURLString.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+            geocodeURLString = geocodeURLString.stringByAddingPercentEncodingWithAllowedCharacters(.URLPathAllowedCharacterSet())!
             
-            let geocodeURL = NSURL(string: geocodeURLString)
-             do {
+            if let geocodeURL:NSURL = NSURL(string: geocodeURLString){
+            
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let geocodingResultsData = NSData(contentsOfURL: geocodeURL!)
-                
-                let dictionary: Dictionary<NSObject, AnyObject> = (try! NSJSONSerialization.JSONObjectWithData(geocodingResultsData!, options: NSJSONReadingOptions.MutableContainers)) as! Dictionary<NSObject, AnyObject>
-                
-               
-                    // Get the response status.
-                    let status = dictionary["status"] as! String
-                    
-                    if status == "OK" {
-                        let allResults = dictionary["results"] as! Array<Dictionary<NSObject, AnyObject>>
-                        self.lookupAddressResults = allResults[0]
-                        
-                        // Keep the most important values.
-                        self.fetchedFormattedAddress = self.lookupAddressResults["formatted_address"] as! String
-                        let geometry = self.lookupAddressResults["geometry"] as! Dictionary<NSObject, AnyObject>
-                        self.fetchedAddressLongitude = ((geometry["location"] as! Dictionary<NSObject, AnyObject>)["lng"] as! NSNumber).doubleValue
-                        self.fetchedAddressLatitude = ((geometry["location"] as! Dictionary<NSObject, AnyObject>)["lat"] as! NSNumber).doubleValue
-                        
-                        completionHandler(status: status, success: true)
+                if let geocodingResultsData = NSData(contentsOfURL: geocodeURL)
+                {
+                    do{
+                        let dictionary = try NSJSONSerialization.JSONObjectWithData(geocodingResultsData, options: NSJSONReadingOptions.MutableContainers) as? [NSObject:AnyObject]
+                        let status = dictionary!["status"] as! String
+                        completionHandler(status: status, success: self.getResponseStatus(dictionary!))
                     }
-                    else {
-                        completionHandler(status: status, success: false)
+                    catch let error as NSError
+                    {
+                        print(error)
                     }
+                }
             })
-             }catch let error as NSError {
-                print(error)
-                completionHandler(status: "", success: false)
             }
         }
         else
         {
             completionHandler(status: "No valid address.", success: false)
         }
+
     }
     
-    func getResponseStatus(){
+    func getResponseStatus(dictionary: [NSObject:AnyObject]) -> Bool
+    {
+        // Get the response status.
+        let status = dictionary["status"] as! String
         
+        if status == "OK"
+        {
+            let allResults = dictionary["results"] as! Array<Dictionary<NSObject, AnyObject>>
+            self.lookupAddressResults = allResults[0]
+            
+            // Keep the most important values.
+            self.fetchedFormattedAddress = self.lookupAddressResults["formatted_address"] as! String
+            let geometry = self.lookupAddressResults["geometry"] as! Dictionary<NSObject, AnyObject>
+            self.fetchedAddressLongitude = ((geometry["location"] as! Dictionary<NSObject, AnyObject>)["lng"] as! NSNumber).doubleValue
+            self.fetchedAddressLatitude = ((geometry["location"] as! Dictionary<NSObject, AnyObject>)["lat"] as! NSNumber).doubleValue
+            return true
+        }
+        else
+        {
+            return false
+        }
     }
     
     func getDirections(origin: String!, destination: String!, waypoints: Array<String>!, travelMode: AnyObject!, completionHandler: ((status: String, success: Bool) -> Void)) {
@@ -211,3 +219,4 @@ extension Double
             return formatter.stringFromNumber(self)!
     }
 }
+
