@@ -14,8 +14,10 @@
 #import "WXManager.h"
 #import "WXCondition.h"
 #import "WXDailyForecast.h"
+#import "WXClient.h"
 #import "ReactiveCocoa.h"
 #import "GoogleMaps.h"
+#import "WeatherDataModel.h"
 @import CoreLocation;
 
 

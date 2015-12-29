@@ -52,7 +52,12 @@ class HomeViewModel: NSObject
     
     func getCoordinate(mapTask:MapTasks) -> CLLocationCoordinate2D
     {
-        return CLLocationCoordinate2D(latitude: mapTask.fetchedAddressLatitude, longitude: mapTask.fetchedAddressLongitude)
+        return CLLocationCoordinate2D(latitude: CLLocationDegrees(mapTask.fetchedAddressLatitude), longitude: CLLocationDegrees(mapTask.fetchedAddressLongitude))
+    }
+    
+    func getCoordinateLocation(mapTask:MapTasks) -> CLLocation
+    {
+        return CLLocation(latitude: CLLocationDegrees(mapTask.fetchedAddressLatitude), longitude: CLLocationDegrees(mapTask.fetchedAddressLongitude))
     }
     
     func setupLocationMarker(mapTasks:MapTasks, mapView:GMSMapView, coordinate: CLLocationCoordinate2D)

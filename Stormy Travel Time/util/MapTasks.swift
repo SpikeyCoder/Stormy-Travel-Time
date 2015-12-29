@@ -138,6 +138,8 @@ class MapTasks: NSObject
                         
                         let endLocationDictionary = legs[legs.count - 1]["end_location"] as! Dictionary<NSObject, AnyObject>
                         self.destinationCoordinate = CLLocationCoordinate2DMake(endLocationDictionary["lat"] as! Double, endLocationDictionary["lng"] as! Double)
+                        self.fetchedAddressLatitude = self.destinationCoordinate.latitude
+                        self.fetchedAddressLongitude = self.destinationCoordinate.longitude
                         
                         self.originAddress = legs[0]["start_address"] as! String
                         self.destinationAddress = legs[legs.count - 1]["end_address"] as! String

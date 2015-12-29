@@ -204,16 +204,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
                         self.mapView.camera = GMSCameraPosition.cameraWithTarget(coordinate, zoom: 14.0)
                         self.homeViewModel.setupLocationMarker(self.mapTasks, mapView: self.mapView, coordinate: coordinate)
                     }
-                    
+                    if self.infoLabel.text!.rangeOfString("Total Distance") == nil
+                    {
+                       
+                        let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
+                        self.weatherData.weatherAtLocation(coordinate, completion: { (tempString) -> Void in
+                            self.infoLabel.text = tempString
+                           
+                        })
+                        
+                    }
+                     self.revealWeatherIcon()
                 })
             }
-            
-            
-            if self.infoLabel.text!.rangeOfString("Total Distance") == nil
-            {
-                self.infoLabel.text = self.weatherData.weatherAtLocation()
-            }
-            self.revealWeatherIcon()
         }
         
         let closeAction = self.homeViewModel.closeAction()
@@ -266,7 +269,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     func displayRouteInfo()
     {
-        infoLabel.text = mapTasks.totalDistance + "\n" + mapTasks.totalDuration + "\n" + self.weatherData.weatherAtDestination()
+        let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
+        self.weatherData.weatherAtDestination(Int(self.mapTasks.totalDurationInSeconds/3600), coordinate: coordinate) { (tempString) -> Void in
+            self.infoLabel.text = self.mapTasks.totalDistance + "\n" + self.mapTasks.totalDuration + "\n" + tempString
+        }
     }
 
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus)
@@ -293,7 +299,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     {
         self.weatherIcon.image = self.homeViewModel.setWeatherImage(self.weatherData.weatherCondition)
         self.weatherIcon.hidden = false
+        self.infoLabel.hidden = false
         self.revealViewController().revealToggleAnimated(true)
         self.view.layoutIfNeeded()
+    }
+    
+    func hideWeatherInfo(){
+        self.weatherIcon.hidden = true
+        self.infoLabel.hidden = true
     }
 }

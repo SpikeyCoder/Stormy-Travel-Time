@@ -19,6 +19,8 @@
 		C64F85CA1B386B7100011FCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64F85C91B386B7100011FCE /* Images.xcassets */; };
 		C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64F85CB1B386B7100011FCE /* LaunchScreen.xib */; };
 		C64F85D91B386B7100011FCE /* Stormy_Travel_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */; };
+		F76B6C381C2E2626008A98AB /* WXClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B6C371C2E2626008A98AB /* WXClient.m */; };
+		F76B6C3B1C2E39FE008A98AB /* WeatherDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */; };
 		F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */; };
 		F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76BAC111B811B31008640E2 /* SideMenu.storyboard */; };
 		F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */; };
@@ -58,6 +60,10 @@
 		C64F85D21B386B7100011FCE /* Stormy Travel TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stormy Travel TimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64F85D71B386B7100011FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stormy_Travel_TimeTests.swift; sourceTree = "<group>"; };
+		F76B6C361C2E2626008A98AB /* WXClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXClient.h; path = Weather/WXClient.h; sourceTree = "<group>"; };
+		F76B6C371C2E2626008A98AB /* WXClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXClient.m; path = Weather/WXClient.m; sourceTree = "<group>"; };
+		F76B6C391C2E39FE008A98AB /* WeatherDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherDataModel.h; path = Weather/WeatherDataModel.h; sourceTree = "<group>"; };
+		F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherDataModel.m; path = Weather/WeatherDataModel.m; sourceTree = "<group>"; };
 		F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataController.swift; path = DataControllers/WeatherDataController.swift; sourceTree = "<group>"; };
 		F76BAC111B811B31008640E2 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 				C62ECECE1B7E611A00AC9C1F /* ContextDataController.swift */,
 				C62ECED01B7E613400AC9C1F /* MapsRemoteDataController.swift */,
 				F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */,
+				F76B6C391C2E39FE008A98AB /* WeatherDataModel.h */,
+				F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */,
 			);
 			name = DataControllers;
 			sourceTree = "<group>";
@@ -221,6 +229,8 @@
 				F7A48FCD1B8A47F100E6BFBB /* WXCondition.m */,
 				F7A48FCF1B8A480B00E6BFBB /* WXDailyForecast.h */,
 				F7A48FD01B8A480B00E6BFBB /* WXDailyForecast.m */,
+				F76B6C361C2E2626008A98AB /* WXClient.h */,
+				F76B6C371C2E2626008A98AB /* WXClient.m */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -382,11 +392,13 @@
 			files = (
 				F7A48FCB1B8A47D600E6BFBB /* WXManager.m in Sources */,
 				F7A48FD11B8A480B00E6BFBB /* WXDailyForecast.m in Sources */,
+				F76B6C381C2E2626008A98AB /* WXClient.m in Sources */,
 				C62ECECF1B7E611A00AC9C1F /* ContextDataController.swift in Sources */,
 				C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */,
 				C62ECED11B7E613400AC9C1F /* MapsRemoteDataController.swift in Sources */,
 				C62ECEC91B7E45D400AC9C1F /* HomeViewModel.swift in Sources */,
 				F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */,
+				F76B6C3B1C2E39FE008A98AB /* WeatherDataModel.m in Sources */,
 				F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */,
 				C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */,
 				F76BAC261B88E18E008640E2 /* MenuActionViewModel.swift in Sources */,

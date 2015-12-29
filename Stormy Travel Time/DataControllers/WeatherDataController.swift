@@ -13,108 +13,62 @@ class WeatherDataController: NSObject {
     var session:NSURLSession!
     var degreesAtDestination = 75.0
     var weatherCondition = "Sunny"
+    let apiKey = "8a9a4b36a224b8b0d349e971d321541f"
     
     required override init()
     {
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         self.session = NSURLSession(configuration: config)
+       
         super.init()
     }
-   
     
-    func weatherAtDestination() -> String {
-        return "Weather Upon Arrival: \(degreesAtDestination)\u{00B0} F"
-    }
-    
-    func weatherAtLocation() -> String {
-        return "Current Weather: \(degreesAtDestination)\u{00B0} F"
-    }
-    
-    func fetchJSONFromURL(url:NSURL) -> RACSignal
+    func weatherAtDestination(duration:Int, coordinate: CLLocationCoordinate2D, completion:(tempString: String)->Void)
     {
-        print("Fetching: \(url.absoluteString)")
-
-        return RACSignal.createSignal({ (subscriber) -> RACDisposable! in
-            let dataTask = self.session.dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
-                if error == nil
-                {
-                    if let returnedData:NSData = data
-                    {
-                        
-                        do{
-                           if let json = try NSJSONSerialization.JSONObjectWithData(returnedData, options: .AllowFragments) as? NSDictionary
-                            {
-                                subscriber.sendNext(json)
-                            }
-                        }catch let fetchError as NSError {
-                            subscriber.sendError(fetchError)
-                            print("fetchError: \(fetchError.localizedDescription)")
-                        }
-                    }
-                }
-                else
-                {
-                    subscriber.sendError(error)
-                }
-                subscriber.sendCompleted()
-                
-            })
-            dataTask.resume()
-            return RACDisposable(block: { () -> Void in
-                dataTask.cancel()
-            })
-        })
-    }
-    
-    func fetchCurrentConditionsForLocation(coordinate:CLLocationCoordinate2D)-> RACSignal
-    {
-        let urlString = NSString(format: "http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=imperial", coordinate.latitude, coordinate.longitude)
+        let urlString = NSString(format: "http://api.openweathermap.org/data/2.5/forecast?lat=%f&lon=%f&units=imperial&cnt=12&APPID=8a9a4b36a224b8b0d349e971d321541f", coordinate.latitude, coordinate.longitude)
         let url = NSURL(string: urlString as String)!
         
-        return self.fetchJSONFromURL(url).map({ json in
-            return try? MTLJSONAdapter.modelOfClass(WXCondition.self, fromJSONDictionary: json as! [NSObject:AnyObject])
-        })
-        
+        self.fetchWeatherDataFromURL(url) { (jsonResult) -> Void in
+            if let weatherList = jsonResult["list"] as? [AnyObject]
+            {
+                let temp = self.getTempFromList(weatherList, hourNumber: duration)
+                completion(tempString: "Weather Upon Arrival: \(temp)\u{00B0} F")
+            }
+        }
     }
     
-    func fetchHourlyForecastForLocation(coordinate:CLLocationCoordinate2D) -> RACSignal
+    func getTempFromList(list:[AnyObject], hourNumber:Int) -> Double
     {
-        let urlString = NSString(format: "http://api.openweathermap.org/data/2.5/forecast?lat=%f&lon=%f&units=imperial&cnt=12", coordinate.latitude, coordinate.longitude)
-        let url = NSURL(string: urlString as String)
+        let hour = hourNumber < 13 ? hourNumber : 12
         
-        let signal:RACSignal! = self.fetchJSONFromURL(url!)
-
-        return signal.map(
-            { json in
-                if let jsonObj = json as? [NSObject : AnyObject]
-                {
-                    let list:RACSequence = jsonObj["list"]!.rac_sequence
-                    return list.map({ json in
-                        return try? MTLJSONAdapter.modelOfClass(WXCondition.self, fromJSONDictionary: json as! [NSObject : AnyObject])
-                    })
-
-                }
-                return try? MTLJSONAdapter.modelOfClass(WXCondition.self, fromJSONDictionary: json as! [NSObject : AnyObject])
-        })
-
+        if let weatherForHour = list[hour] as? [NSObject:AnyObject], mainWeather = weatherForHour["main"] as? [NSObject:AnyObject], temp = mainWeather["temp"] as? Double, weather = weatherForHour["weather"] as? [NSObject:AnyObject], condition = weather["main"] as? String
+        {
+            self.weatherCondition = condition
+            return temp
+        }
+        return 75.0
     }
-    func fetchDailyForecastForLocation(coordinate:CLLocationCoordinate2D) -> RACSignal
+    
+    func weatherAtLocation(coordinate: CLLocationCoordinate2D, completion:(tempString: String)->Void)
     {
-        let urlString = NSString(format: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=%f&lon=%f&units=imperial&cnt=7", coordinate.latitude, coordinate.longitude)
-        let url = NSURL(string: urlString as String)
-        
-        let signal:RACSignal! = self.fetchJSONFromURL(url!)
-        
-        return signal.map(
-            { json in
-                if let jsonObj = json as? [NSObject : AnyObject]
-                {
-                    let list:RACSequence = jsonObj["list"]!.rac_sequence
-                    return list.map({ json in
-                        return try? MTLJSONAdapter.modelOfClass(WXDailyForecast.self, fromJSONDictionary: json as! [NSObject : AnyObject])
-                    })
-                }
-                return try? MTLJSONAdapter.modelOfClass(WXDailyForecast.self, fromJSONDictionary: json as! [NSObject : AnyObject])
-        })
+        let urlString = NSString(format: "http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=imperial&cnt=7&APPID=8a9a4b36a224b8b0d349e971d321541f", coordinate.latitude, coordinate.longitude)
+        let url = NSURL(string: urlString as String)!
+        self.fetchWeatherDataFromURL(url) { (jsonResult) -> Void in
+            if let mainWeather = jsonResult["main"] as? [NSObject:AnyObject]
+            {
+              completion(tempString: "Current Weather: \(mainWeather["temp"]!)\u{00B0} F")
+            }
+        }
     }
+    
+    func fetchWeatherDataFromURL(url:NSURL, completion:(jsonResult:[NSObject: AnyObject])-> Void)
+    {
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url)
+            { (data, response, error) -> Void in
+                let jsonResult = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! [NSObject:AnyObject]
+                completion(jsonResult: jsonResult!)
+        }
+        task.resume()
+    }
+    
 }
