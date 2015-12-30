@@ -105,16 +105,18 @@ class MapTasks: NSObject
     }
     
     func getDirections(origin: String!, destination: String!, waypoints: Array<String>!, travelMode: AnyObject!, completionHandler: ((status: String, success: Bool) -> Void)) {
-        if let originLocation = origin {
-            if let destinationLocation = destination {
+        if let originLocation = origin, destinationLocation = destination
+        {
                 let directionsURLString = baseURLDirections + "origin=" + originLocation + "&destination=" + destinationLocation
                 
                 guard let directionsURLStringCleansed: String = directionsURLString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) else {return }
                 var directionsURLMutableString = directionsURLStringCleansed
-                if let routeWaypoints = waypoints {
+                if let routeWaypoints = waypoints
+                {
                     directionsURLMutableString += "&waypoints=optimize:true"
                     
-                    for waypoint in routeWaypoints {
+                    for waypoint in routeWaypoints
+                    {
                         directionsURLMutableString += "|" + waypoint
                     }
                 }
@@ -124,10 +126,9 @@ class MapTasks: NSObject
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     
                         let directionsData = NSData(contentsOfURL: directionsURL!), dictionary: Dictionary<NSObject, AnyObject> = (try! NSJSONSerialization.JSONObjectWithData(directionsData!, options: NSJSONReadingOptions.MutableContainers)) as! Dictionary<NSObject, AnyObject>
-                        
-                        let status = dictionary["status"] as! String
                     
-                    if status == "OK" {
+                    if let status = dictionary["status"] as? String where status == "OK"
+                    {
                         self.selectedRoute = (dictionary["routes"] as! Array<Dictionary<NSObject, AnyObject>>)[0]
                         self.overviewPolyline = self.selectedRoute["overview_polyline"] as! Dictionary<NSObject, AnyObject>
                         
@@ -150,39 +151,37 @@ class MapTasks: NSObject
                     }
                     else
                     {
-                        completionHandler(status: status, success: false)
+                        if let status = dictionary["status"] as? String
+                        {
+                            completionHandler(status: status, success: false)
+                        }
                     }
                         
                 })  }catch let error as NSError{
                     print(error)
                     completionHandler(status: "", success: false)
                 }
-            }
-            else {
-                completionHandler(status: "Destination is nil.", success: false)
-            }
         }
-        else {
+        else
+        {
             completionHandler(status: "Origin is nil", success: false)
         }
     }
     
-    func calculateTotalDistanceAndDuration() {
+    func calculateTotalDistanceAndDuration()
+    {
         let legs = self.selectedRoute["legs"] as! Array<Dictionary<NSObject, AnyObject>>
         
-        totalDistanceInMeters = 0
-        totalDurationInSeconds = 0
+        self.totalDistanceInMeters = 0
+        self.totalDurationInSeconds = 0
         
-        for leg in legs {
-            totalDistanceInMeters += (leg["distance"] as! Dictionary<NSObject, AnyObject>)["value"] as! UInt
-            totalDurationInSeconds += (leg["duration"] as! Dictionary<NSObject, AnyObject>)["value"] as! UInt
+        for leg in legs
+        {
+            self.totalDistanceInMeters += (leg["distance"] as! Dictionary<NSObject, AnyObject>)["value"] as! UInt
+            self.totalDurationInSeconds += (leg["duration"] as! Dictionary<NSObject, AnyObject>)["value"] as! UInt
         }
         
-        
-        let distanceInKilometers: Double = Double(totalDistanceInMeters)
-        let distanceInMiles: Double = Double(distanceInKilometers * 0.000621371 )
-        totalDistance = "Total Distance: \(distanceInMiles.formatted) miles"
-        
+        self.setFormattedDistanceString()
         
         let mins = totalDurationInSeconds / 60
         let hours = mins / 60
@@ -192,6 +191,19 @@ class MapTasks: NSObject
         let remainingSecs = totalDurationInSeconds % 60
         
         let timeArray = ["\(days) days, ", "\(remainingHours) hours, ", "\(remainingMins) mins, ", "\(remainingSecs) secs"]
+        
+        totalDuration = self.getFormattedInfoTimeString(timeArray)
+    }
+    
+    func setFormattedDistanceString()
+    {
+        let distanceInKilometers: Double = Double(self.totalDistanceInMeters)
+        let distanceInMiles: Double = Double(distanceInKilometers * 0.000621371 )
+        self.totalDistance = "Total Distance: \(distanceInMiles.formatted) miles"
+    }
+    
+    func getFormattedInfoTimeString(timeArray:[String]) -> String
+    {
         var infoTimeString = "Duration: "
         for timeUnit in timeArray
         {
@@ -207,9 +219,9 @@ class MapTasks: NSObject
                 infoTimeString += timeUnit
             }
         }
-        
-        totalDuration = infoTimeString
+        return infoTimeString
     }
+    
 }
 
 extension Double

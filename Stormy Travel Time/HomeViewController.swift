@@ -285,9 +285,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>)
     {
-        if !didFindMyLocation
+        if let myLocation: CLLocation = change![NSKeyValueChangeNewKey] as? CLLocation where !didFindMyLocation
         {
-            let myLocation: CLLocation = change![NSKeyValueChangeNewKey] as! CLLocation
             mapView.camera = GMSCameraPosition.cameraWithTarget(myLocation.coordinate, zoom: 10.0)
             mapView.settings.myLocationButton = true
             

@@ -23,21 +23,9 @@
 
 - (id)init {
     if (self = [super init]) {
-        [self performRACObservation];
     }
     return self;
 }
 
--(void)performRACObservation
-{
-    [[RACObserve([WXManager sharedManager], currentCondition)
-      deliverOn:RACScheduler.mainThreadScheduler]
-     subscribeNext:^(WXCondition *newCondition) {
-         self.temp = [NSString stringWithFormat:@"%.0f°",newCondition.temperature.floatValue];
-         self.conditions = [newCondition.condition capitalizedString];
-
-     }];
-    
-}
 
 @end
