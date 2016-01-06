@@ -157,10 +157,11 @@ class MapTasks: NSObject
                         }
                     }
                         
-                })  }catch let error as NSError{
-                    print(error)
-                    completionHandler(status: "", success: false)
-                }
+                })  }
+//                        catch let error as NSError{
+//                    print(error)
+//                    completionHandler(status: "", success: false)
+//                }
         }
         else
         {
@@ -190,7 +191,7 @@ class MapTasks: NSObject
         let remainingMins = mins % 60
         let remainingSecs = totalDurationInSeconds % 60
         
-        let timeArray = ["\(days) days, ", "\(remainingHours) hours, ", "\(remainingMins) mins, ", "\(remainingSecs) secs"]
+        let timeArray = [" \(days) days, ", " \(remainingHours) hours, ", " \(remainingMins) mins, ", " \(remainingSecs) secs"]
         
         totalDuration = self.getFormattedInfoTimeString(timeArray)
     }
@@ -209,14 +210,14 @@ class MapTasks: NSObject
         {
             if timeUnit.rangeOfString("secs") == nil
             {
-                if timeUnit.rangeOfString("0") == nil
+                if timeUnit.rangeOfString(" 0") == nil
                 {
-                    infoTimeString += timeUnit
+                    infoTimeString += timeUnit.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
                 }
             }
             else
             {
-                infoTimeString += timeUnit
+                infoTimeString += timeUnit.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             }
         }
         return infoTimeString

@@ -248,6 +248,7 @@
 				C64F85B81B386B7000011FCE /* Resources */,
 				DF3FC22AAB5A0F4046373F74 /* Copy Pods Resources */,
 				1A50F6D82E610FEDC92BC33B /* Embed Pods Frameworks */,
+				F7F8ED701C3C54EE00AE072E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -382,6 +383,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F7F8ED701C3C54EE00AE072E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -553,6 +567,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stormy Travel Time/Objective-CBridgingHeader.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -574,6 +589,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stormy Travel Time/Objective-CBridgingHeader.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

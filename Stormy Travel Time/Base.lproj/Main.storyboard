@@ -54,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny" translatesAutoresizingMaskIntoConstraints="NO" id="Jj4-kM-bHv" userLabel="weatherIcon">
-                                <rect key="frame" x="490" y="554" width="30" height="30"/>
+                                <rect key="frame" x="530" y="554" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="0ri-4K-r1K"/>
                                     <constraint firstAttribute="width" secondItem="Jj4-kM-bHv" secondAttribute="height" multiplier="1:1" id="sgn-UQ-b6j"/>
@@ -64,7 +64,7 @@
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Jj4-kM-bHv" secondAttribute="bottom" constant="16" id="4re-Xj-7nx"/>
-                            <constraint firstAttribute="trailing" secondItem="Jj4-kM-bHv" secondAttribute="trailing" constant="80" id="A3c-6o-gpf"/>
+                            <constraint firstAttribute="trailing" secondItem="Jj4-kM-bHv" secondAttribute="trailing" constant="40" id="A3c-6o-gpf"/>
                             <constraint firstAttribute="trailing" secondItem="XgC-bN-tST" secondAttribute="trailing" id="AkI-Lp-DFr"/>
                             <constraint firstItem="XgC-bN-tST" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L8d-IH-IMT"/>
                             <constraint firstItem="6Mx-gt-hEp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="OJx-vJ-DPF"/>

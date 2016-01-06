@@ -16,16 +16,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Stormy Travel Time/util/MapTasks.swift"
-            timestampString = "473035228.701254"
+            filePath = "Stormy Travel Time/DataControllers/WeatherDataController.swift"
+            timestampString = "473631909.532762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "getResponseStatus(_:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getTempFromList(_:hourNumber:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,13 +35,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Stormy Travel Time/DataControllers/WeatherDataController.swift"
-            timestampString = "473037062.947362"
+            filePath = "Stormy Travel Time/HomeViewController.swift"
+            timestampString = "473797584.351346"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getTempFromList(_:hourNumber:)"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "displayRouteInfo()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stormy Travel Time/util/MapTasks.swift"
+            timestampString = "473797614.41981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "calculateTotalDistanceAndDuration()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stormy Travel Time/util/MapTasks.swift"
+            timestampString = "473797890.064822"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "calculateTotalDistanceAndDuration()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
