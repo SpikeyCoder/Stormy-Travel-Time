@@ -131,21 +131,22 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     {
         if self.routePolyline != nil
         {
-            self.homeViewModel.clearRoute()
-            
-            mapTasks.getDirections(mapTasks.originAddress, destination: mapTasks.destinationAddress, waypoints: waypointsArray, travelMode: nil, completionHandler: { (status, success) -> Void in
-                
-                if success
-                {
-                    self.homeViewModel.configureMapAndMarkersForRoute(self.mapTasks, mapView: self.mapView)
-                    self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
-                    self.displayRouteInfo()
-                }
-                else
-                {
-                    print(status)
-                }
-            })
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                self.homeViewModel.clearRoute()
+                self.mapTasks.getDirections(self.mapTasks.originAddress, destination: self.mapTasks.destinationAddress, waypoints: self.waypointsArray, travelMode: nil, completionHandler: { (status, success) -> Void in
+                    
+                    if success
+                    {
+                        self.homeViewModel.configureMapAndMarkersForRoute(self.mapTasks, mapView: self.mapView)
+                        self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
+                        self.displayRouteInfo()
+                    }
+                    else
+                    {
+                        print(status)
+                    }
+                })
+            }
         }
     }
     
@@ -241,22 +242,25 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         let createRouteAction = UIAlertAction(title: "Create Route", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             let origin = (addressAlert.textFields![0] ).text! as String
             let destination = (addressAlert.textFields![1] ).text! as String
-            
-            self.mapTasks.getDirections(origin, destination: destination, waypoints: nil, travelMode: nil, completionHandler: { (status, success) -> Void in
-                if success
-                {
-                    self.homeViewModel.configureMapAndMarkersForRoute(self.mapTasks, mapView: self.mapView)
-                    self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
-                    self.displayRouteInfo()
-                }
-                else
-                {
-                    print(status)
-                }
-            })
-            self.weatherIconBottomConstraint.constant = 0
-            self.weatherIconRightConstraint.constant = 70
-            self.revealWeatherIcon()
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                self.mapTasks.getDirections(origin, destination: destination, waypoints: nil, travelMode: nil, completionHandler: { (status, success) -> Void in
+                    if success
+                    {
+                        
+                        self.homeViewModel.configureMapAndMarkersForRoute(self.mapTasks, mapView: self.mapView)
+                        self.homeViewModel.drawRoute(self.mapTasks, mapView: self.mapView)
+                        self.displayRouteInfo()
+                        
+                    }
+                    else
+                    {
+                        print(status)
+                    }
+                })
+                self.weatherIconBottomConstraint.constant = 0
+                self.weatherIconRightConstraint.constant = 70
+                self.revealWeatherIcon()
+            }
         }
 
         let closeAction = self.homeViewModel.closeAction()
@@ -271,7 +275,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     {
         let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
         self.weatherData.weatherAtDestination(Int(self.mapTasks.totalDurationInSeconds/3600), coordinate: coordinate) { (tempString) -> Void in
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
             self.infoLabel.text = self.mapTasks.totalDistance + "\n" + self.mapTasks.totalDuration + "\n" + tempString
+            }
         }
     }
 
