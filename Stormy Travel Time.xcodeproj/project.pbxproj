@@ -18,10 +18,6 @@
 		C64F85CA1B386B7100011FCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64F85C91B386B7100011FCE /* Images.xcassets */; };
 		C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64F85CB1B386B7100011FCE /* LaunchScreen.xib */; };
 		C64F85D91B386B7100011FCE /* Stormy_Travel_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */; };
-		F70A0AC11C4B301500FDEAFF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; };
-		F70A0AC21C4B301500FDEAFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; };
-		F70A0AC31C4B301500FDEAFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; };
-		F70A0B041C4B3A2900FDEAFF /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B011C4B39EB00FDEAFF /* GoogleMaps.framework */; };
 		F70A0B2F1C4B447B00FDEAFF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B2E1C4B447B00FDEAFF /* Security.framework */; };
 		F70A0B311C4B448300FDEAFF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B301C4B448300FDEAFF /* SystemConfiguration.framework */; };
 		F70A0B331C4B449D00FDEAFF /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B321C4B449D00FDEAFF /* GLKit.framework */; };
@@ -36,12 +32,16 @@
 		F70A0B451C4B458000FDEAFF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */; };
 		F70A0B471C4B458800FDEAFF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B461C4B458800FDEAFF /* Accelerate.framework */; };
 		F70A0B481C4B49BE00FDEAFF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; };
-		F70A0B491C4B49BE00FDEAFF /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F70A0B4B1C4B49EE00FDEAFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; };
-		F70A0B4C1C4B49EE00FDEAFF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F70A0B4D1C4B4A1700FDEAFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; };
-		F70A0B4E1C4B4A1700FDEAFF /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F70A0B501C4B4A7700FDEAFF /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F70A0B4F1C4B4A7700FDEAFF /* GoogleMaps.bundle */; };
+		F70A0B541C4B4DB100FDEAFF /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F70A0B531C4B4DB100FDEAFF /* GoogleMaps.bundle */; };
+		F70A0B581C4B515D00FDEAFF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; };
+		F70A0B591C4B515D00FDEAFF /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70A0B5B1C4B516500FDEAFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; };
+		F70A0B5C1C4B516500FDEAFF /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70A0B5D1C4B516C00FDEAFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; };
+		F70A0B5E1C4B516C00FDEAFF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70A0B5F1C4B518000FDEAFF /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B511C4B4D9700FDEAFF /* GoogleMaps.framework */; };
 		F76B6C3B1C2E39FE008A98AB /* WeatherDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */; };
 		F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */; };
 		F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76BAC111B811B31008640E2 /* SideMenu.storyboard */; };
@@ -64,15 +64,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F70A0B4A1C4B49BE00FDEAFF /* Embed Frameworks */ = {
+		F70A0B5A1C4B515D00FDEAFF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F70A0B4E1C4B4A1700FDEAFF /* Result.framework in Embed Frameworks */,
-				F70A0B491C4B49BE00FDEAFF /* Mantle.framework in Embed Frameworks */,
-				F70A0B4C1C4B49EE00FDEAFF /* ReactiveCocoa.framework in Embed Frameworks */,
+				F70A0B591C4B515D00FDEAFF /* Mantle.framework in Embed Frameworks */,
+				F70A0B5E1C4B516C00FDEAFF /* ReactiveCocoa.framework in Embed Frameworks */,
+				F70A0B5C1C4B516500FDEAFF /* Result.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,7 +98,6 @@
 		F70A0ABD1C4B301500FDEAFF /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = ext/Mantle.framework; sourceTree = "<group>"; };
 		F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ext/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		F70A0ABF1C4B301500FDEAFF /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ext/Result.framework; sourceTree = "<group>"; };
-		F70A0B011C4B39EB00FDEAFF /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ext/GoogleMaps.framework; sourceTree = "<group>"; };
 		F70A0B2E1C4B447B00FDEAFF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F70A0B301C4B448300FDEAFF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F70A0B321C4B449D00FDEAFF /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -112,7 +111,8 @@
 		F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		F70A0B461C4B458800FDEAFF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		F70A0B4F1C4B4A7700FDEAFF /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = ext/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		F70A0B511C4B4D9700FDEAFF /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ext/GoogleMaps.framework; sourceTree = "<group>"; };
+		F70A0B531C4B4DB100FDEAFF /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = ext/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		F76B6C391C2E39FE008A98AB /* WeatherDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherDataModel.h; path = Weather/WeatherDataModel.h; sourceTree = "<group>"; };
 		F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherDataModel.m; path = Weather/WeatherDataModel.m; sourceTree = "<group>"; };
 		F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataController.swift; path = DataControllers/WeatherDataController.swift; sourceTree = "<group>"; };
@@ -137,9 +137,11 @@
 			files = (
 				F70A0B471C4B458800FDEAFF /* Accelerate.framework in Frameworks */,
 				F70A0B451C4B458000FDEAFF /* CoreBluetooth.framework in Frameworks */,
+				F70A0B5B1C4B516500FDEAFF /* Result.framework in Frameworks */,
 				F70A0B431C4B453F00FDEAFF /* CoreLocation.framework in Frameworks */,
 				F70A0B411C4B452500FDEAFF /* OpenGLES.framework in Frameworks */,
 				F70A0B3F1C4B451C00FDEAFF /* QuartzCore.framework in Frameworks */,
+				F70A0B581C4B515D00FDEAFF /* Mantle.framework in Frameworks */,
 				F70A0B481C4B49BE00FDEAFF /* Mantle.framework in Frameworks */,
 				F70A0B3D1C4B450300FDEAFF /* AVFoundation.framework in Frameworks */,
 				F70A0B4D1C4B4A1700FDEAFF /* Result.framework in Frameworks */,
@@ -148,13 +150,11 @@
 				F70A0B391C4B44D300FDEAFF /* ImageIO.framework in Frameworks */,
 				F70A0B371C4B44CC00FDEAFF /* CoreImage.framework in Frameworks */,
 				F70A0B351C4B44A400FDEAFF /* CoreGraphics.framework in Frameworks */,
+				F70A0B5F1C4B518000FDEAFF /* GoogleMaps.framework in Frameworks */,
 				F70A0B331C4B449D00FDEAFF /* GLKit.framework in Frameworks */,
 				F70A0B311C4B448300FDEAFF /* SystemConfiguration.framework in Frameworks */,
 				F70A0B2F1C4B447B00FDEAFF /* Security.framework in Frameworks */,
-				F70A0B041C4B3A2900FDEAFF /* GoogleMaps.framework in Frameworks */,
-				F70A0AC11C4B301500FDEAFF /* Mantle.framework in Frameworks */,
-				F70A0AC21C4B301500FDEAFF /* ReactiveCocoa.framework in Frameworks */,
-				F70A0AC31C4B301500FDEAFF /* Result.framework in Frameworks */,
+				F70A0B5D1C4B516C00FDEAFF /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +171,7 @@
 		023F79612DFB8803E0A7525A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F70A0B511C4B4D9700FDEAFF /* GoogleMaps.framework */,
 				F70A0B461C4B458800FDEAFF /* Accelerate.framework */,
 				F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */,
 				F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */,
@@ -184,7 +185,6 @@
 				F70A0B321C4B449D00FDEAFF /* GLKit.framework */,
 				F70A0B301C4B448300FDEAFF /* SystemConfiguration.framework */,
 				F70A0B2E1C4B447B00FDEAFF /* Security.framework */,
-				F70A0B011C4B39EB00FDEAFF /* GoogleMaps.framework */,
 				F70A0ABD1C4B301500FDEAFF /* Mantle.framework */,
 				F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */,
 				F70A0ABF1C4B301500FDEAFF /* Result.framework */,
@@ -216,7 +216,7 @@
 		C64F85B11B386B7000011FCE = {
 			isa = PBXGroup;
 			children = (
-				F70A0B4F1C4B4A7700FDEAFF /* GoogleMaps.bundle */,
+				F70A0B531C4B4DB100FDEAFF /* GoogleMaps.bundle */,
 				F76BAC231B88CBC9008640E2 /* Objective-CBridgingHeader.h */,
 				C64F85BC1B386B7000011FCE /* Stormy Travel Time */,
 				C64F85D51B386B7100011FCE /* Stormy Travel TimeTests */,
@@ -321,7 +321,7 @@
 				C64F85B71B386B7000011FCE /* Frameworks */,
 				C64F85B81B386B7000011FCE /* Resources */,
 				F7F8ED701C3C54EE00AE072E /* ShellScript */,
-				F70A0B4A1C4B49BE00FDEAFF /* Embed Frameworks */,
+				F70A0B5A1C4B515D00FDEAFF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,7 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70A0B501C4B4A7700FDEAFF /* GoogleMaps.bundle in Resources */,
+				F70A0B541C4B4DB100FDEAFF /* GoogleMaps.bundle in Resources */,
 				F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */,
 				C64F85C81B386B7100011FCE /* Main.storyboard in Resources */,
 				C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */,
@@ -595,7 +595,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,6 +605,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
@@ -629,7 +629,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -638,6 +637,7 @@
 				INFOPLIST_FILE = "Stormy Travel Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
