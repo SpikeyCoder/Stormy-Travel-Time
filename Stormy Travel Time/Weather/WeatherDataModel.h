@@ -7,7 +7,7 @@
 //
 @import CoreLocation;
 @import Foundation;
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Foundation/Foundation.h>
 
 @interface WeatherDataModel : NSObject

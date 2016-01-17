@@ -8,7 +8,7 @@
 
 @import Foundation;
 @import CoreLocation;
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "WXCondition.h"
 
 @interface WXManager : NSObject

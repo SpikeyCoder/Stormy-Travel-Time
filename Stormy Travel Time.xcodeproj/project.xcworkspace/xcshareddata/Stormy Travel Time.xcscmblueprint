@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6AA912B523BA963EFC35FAA05F5FEC694C9D83A6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "01529694042D8C98B30DC19F4D4370A306884FE4" : 0,
+    "6AA912B523BA963EFC35FAA05F5FEC694C9D83A6" : 0,
+    "E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "082DFD49-B9C5-4280-89CA-03772AC09279",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "01529694042D8C98B30DC19F4D4370A306884FE4" : "SWRevealViewController",
+    "6AA912B523BA963EFC35FAA05F5FEC694C9D83A6" : "Stormy-Travel-Time",
+    "E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D" : "Stormy-Travel-Time\/Stormy%20Travel%20Time\/ext\/Mantle\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Stormy Travel Time",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Stormy Travel Time.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/John-Lluch\/SWRevealViewController.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01529694042D8C98B30DC19F4D4370A306884FE4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SpikeyCoder\/Stormy-Travel-Time.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6AA912B523BA963EFC35FAA05F5FEC694C9D83A6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Mantle\/Mantle.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D"
+    }
+  ]
+}

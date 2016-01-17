@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E1DE5D4257A9FC383552BAB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEAADA12FE09E54D76E8E63 /* libPods.a */; };
 		C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */; };
 		C62ECEC91B7E45D400AC9C1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */; };
 		C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECECB1B7E5F4C00AC9C1F /* MapTasks.swift */; };
@@ -19,7 +18,30 @@
 		C64F85CA1B386B7100011FCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64F85C91B386B7100011FCE /* Images.xcassets */; };
 		C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64F85CB1B386B7100011FCE /* LaunchScreen.xib */; };
 		C64F85D91B386B7100011FCE /* Stormy_Travel_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */; };
-		F76B6C381C2E2626008A98AB /* WXClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B6C371C2E2626008A98AB /* WXClient.m */; };
+		F70A0AC11C4B301500FDEAFF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; };
+		F70A0AC21C4B301500FDEAFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; };
+		F70A0AC31C4B301500FDEAFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; };
+		F70A0B041C4B3A2900FDEAFF /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B011C4B39EB00FDEAFF /* GoogleMaps.framework */; };
+		F70A0B2F1C4B447B00FDEAFF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B2E1C4B447B00FDEAFF /* Security.framework */; };
+		F70A0B311C4B448300FDEAFF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B301C4B448300FDEAFF /* SystemConfiguration.framework */; };
+		F70A0B331C4B449D00FDEAFF /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B321C4B449D00FDEAFF /* GLKit.framework */; };
+		F70A0B351C4B44A400FDEAFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B341C4B44A400FDEAFF /* CoreGraphics.framework */; };
+		F70A0B371C4B44CC00FDEAFF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B361C4B44CC00FDEAFF /* CoreImage.framework */; };
+		F70A0B391C4B44D300FDEAFF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B381C4B44D300FDEAFF /* ImageIO.framework */; };
+		F70A0B3B1C4B44F400FDEAFF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B3A1C4B44F400FDEAFF /* CoreData.framework */; };
+		F70A0B3D1C4B450300FDEAFF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B3C1C4B450300FDEAFF /* AVFoundation.framework */; };
+		F70A0B3F1C4B451C00FDEAFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B3E1C4B451C00FDEAFF /* QuartzCore.framework */; };
+		F70A0B411C4B452500FDEAFF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B401C4B452500FDEAFF /* OpenGLES.framework */; };
+		F70A0B431C4B453F00FDEAFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */; };
+		F70A0B451C4B458000FDEAFF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */; };
+		F70A0B471C4B458800FDEAFF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B461C4B458800FDEAFF /* Accelerate.framework */; };
+		F70A0B481C4B49BE00FDEAFF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; };
+		F70A0B491C4B49BE00FDEAFF /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70A0B4B1C4B49EE00FDEAFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; };
+		F70A0B4C1C4B49EE00FDEAFF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70A0B4D1C4B4A1700FDEAFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; };
+		F70A0B4E1C4B4A1700FDEAFF /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70A0B501C4B4A7700FDEAFF /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F70A0B4F1C4B4A7700FDEAFF /* GoogleMaps.bundle */; };
 		F76B6C3B1C2E39FE008A98AB /* WeatherDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */; };
 		F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */; };
 		F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76BAC111B811B31008640E2 /* SideMenu.storyboard */; };
@@ -41,10 +63,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F70A0B4A1C4B49BE00FDEAFF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F70A0B4E1C4B4A1700FDEAFF /* Result.framework in Embed Frameworks */,
+				F70A0B491C4B49BE00FDEAFF /* Mantle.framework in Embed Frameworks */,
+				F70A0B4C1C4B49EE00FDEAFF /* ReactiveCocoa.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		30E76E276733D8D01E76A189 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		5AA86CC0A41649AE450030B9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		AAEAADA12FE09E54D76E8E63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C62ECECB1B7E5F4C00AC9C1F /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapTasks.swift; path = util/MapTasks.swift; sourceTree = "<group>"; };
@@ -60,8 +95,24 @@
 		C64F85D21B386B7100011FCE /* Stormy Travel TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stormy Travel TimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64F85D71B386B7100011FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stormy_Travel_TimeTests.swift; sourceTree = "<group>"; };
-		F76B6C361C2E2626008A98AB /* WXClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXClient.h; path = Weather/WXClient.h; sourceTree = "<group>"; };
-		F76B6C371C2E2626008A98AB /* WXClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXClient.m; path = Weather/WXClient.m; sourceTree = "<group>"; };
+		F70A0ABD1C4B301500FDEAFF /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = ext/Mantle.framework; sourceTree = "<group>"; };
+		F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ext/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		F70A0ABF1C4B301500FDEAFF /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ext/Result.framework; sourceTree = "<group>"; };
+		F70A0B011C4B39EB00FDEAFF /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ext/GoogleMaps.framework; sourceTree = "<group>"; };
+		F70A0B2E1C4B447B00FDEAFF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F70A0B301C4B448300FDEAFF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F70A0B321C4B449D00FDEAFF /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		F70A0B341C4B44A400FDEAFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F70A0B361C4B44CC00FDEAFF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		F70A0B381C4B44D300FDEAFF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F70A0B3A1C4B44F400FDEAFF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F70A0B3C1C4B450300FDEAFF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F70A0B3E1C4B451C00FDEAFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F70A0B401C4B452500FDEAFF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		F70A0B461C4B458800FDEAFF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		F70A0B4F1C4B4A7700FDEAFF /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = ext/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		F76B6C391C2E39FE008A98AB /* WeatherDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherDataModel.h; path = Weather/WeatherDataModel.h; sourceTree = "<group>"; };
 		F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherDataModel.m; path = Weather/WeatherDataModel.m; sourceTree = "<group>"; };
 		F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataController.swift; path = DataControllers/WeatherDataController.swift; sourceTree = "<group>"; };
@@ -84,7 +135,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E1DE5D4257A9FC383552BAB /* libPods.a in Frameworks */,
+				F70A0B471C4B458800FDEAFF /* Accelerate.framework in Frameworks */,
+				F70A0B451C4B458000FDEAFF /* CoreBluetooth.framework in Frameworks */,
+				F70A0B431C4B453F00FDEAFF /* CoreLocation.framework in Frameworks */,
+				F70A0B411C4B452500FDEAFF /* OpenGLES.framework in Frameworks */,
+				F70A0B3F1C4B451C00FDEAFF /* QuartzCore.framework in Frameworks */,
+				F70A0B481C4B49BE00FDEAFF /* Mantle.framework in Frameworks */,
+				F70A0B3D1C4B450300FDEAFF /* AVFoundation.framework in Frameworks */,
+				F70A0B4D1C4B4A1700FDEAFF /* Result.framework in Frameworks */,
+				F70A0B3B1C4B44F400FDEAFF /* CoreData.framework in Frameworks */,
+				F70A0B4B1C4B49EE00FDEAFF /* ReactiveCocoa.framework in Frameworks */,
+				F70A0B391C4B44D300FDEAFF /* ImageIO.framework in Frameworks */,
+				F70A0B371C4B44CC00FDEAFF /* CoreImage.framework in Frameworks */,
+				F70A0B351C4B44A400FDEAFF /* CoreGraphics.framework in Frameworks */,
+				F70A0B331C4B449D00FDEAFF /* GLKit.framework in Frameworks */,
+				F70A0B311C4B448300FDEAFF /* SystemConfiguration.framework in Frameworks */,
+				F70A0B2F1C4B447B00FDEAFF /* Security.framework in Frameworks */,
+				F70A0B041C4B3A2900FDEAFF /* GoogleMaps.framework in Frameworks */,
+				F70A0AC11C4B301500FDEAFF /* Mantle.framework in Frameworks */,
+				F70A0AC21C4B301500FDEAFF /* ReactiveCocoa.framework in Frameworks */,
+				F70A0AC31C4B301500FDEAFF /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,18 +171,25 @@
 		023F79612DFB8803E0A7525A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AAEAADA12FE09E54D76E8E63 /* libPods.a */,
+				F70A0B461C4B458800FDEAFF /* Accelerate.framework */,
+				F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */,
+				F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */,
+				F70A0B401C4B452500FDEAFF /* OpenGLES.framework */,
+				F70A0B3E1C4B451C00FDEAFF /* QuartzCore.framework */,
+				F70A0B3C1C4B450300FDEAFF /* AVFoundation.framework */,
+				F70A0B3A1C4B44F400FDEAFF /* CoreData.framework */,
+				F70A0B381C4B44D300FDEAFF /* ImageIO.framework */,
+				F70A0B361C4B44CC00FDEAFF /* CoreImage.framework */,
+				F70A0B341C4B44A400FDEAFF /* CoreGraphics.framework */,
+				F70A0B321C4B449D00FDEAFF /* GLKit.framework */,
+				F70A0B301C4B448300FDEAFF /* SystemConfiguration.framework */,
+				F70A0B2E1C4B447B00FDEAFF /* Security.framework */,
+				F70A0B011C4B39EB00FDEAFF /* GoogleMaps.framework */,
+				F70A0ABD1C4B301500FDEAFF /* Mantle.framework */,
+				F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */,
+				F70A0ABF1C4B301500FDEAFF /* Result.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		37916DCF1B230A13519B4483 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5AA86CC0A41649AE450030B9 /* Pods.debug.xcconfig */,
-				30E76E276733D8D01E76A189 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		C62ECECA1B7E5E9800AC9C1F /* util */ = {
@@ -139,11 +216,11 @@
 		C64F85B11B386B7000011FCE = {
 			isa = PBXGroup;
 			children = (
+				F70A0B4F1C4B4A7700FDEAFF /* GoogleMaps.bundle */,
 				F76BAC231B88CBC9008640E2 /* Objective-CBridgingHeader.h */,
 				C64F85BC1B386B7000011FCE /* Stormy Travel Time */,
 				C64F85D51B386B7100011FCE /* Stormy Travel TimeTests */,
 				C64F85BB1B386B7000011FCE /* Products */,
-				37916DCF1B230A13519B4483 /* Pods */,
 				023F79612DFB8803E0A7525A /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -229,8 +306,6 @@
 				F7A48FCD1B8A47F100E6BFBB /* WXCondition.m */,
 				F7A48FCF1B8A480B00E6BFBB /* WXDailyForecast.h */,
 				F7A48FD01B8A480B00E6BFBB /* WXDailyForecast.m */,
-				F76B6C361C2E2626008A98AB /* WXClient.h */,
-				F76B6C371C2E2626008A98AB /* WXClient.m */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -242,13 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C64F85DC1B386B7100011FCE /* Build configuration list for PBXNativeTarget "Stormy Travel Time" */;
 			buildPhases = (
-				85695827C7CF2E34803F091E /* Check Pods Manifest.lock */,
 				C64F85B61B386B7000011FCE /* Sources */,
 				C64F85B71B386B7000011FCE /* Frameworks */,
 				C64F85B81B386B7000011FCE /* Resources */,
-				DF3FC22AAB5A0F4046373F74 /* Copy Pods Resources */,
-				1A50F6D82E610FEDC92BC33B /* Embed Pods Frameworks */,
 				F7F8ED701C3C54EE00AE072E /* ShellScript */,
+				F70A0B4A1C4B49BE00FDEAFF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70A0B501C4B4A7700FDEAFF /* GoogleMaps.bundle in Resources */,
 				F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */,
 				C64F85C81B386B7100011FCE /* Main.storyboard in Resources */,
 				C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */,
@@ -339,51 +413,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1A50F6D82E610FEDC92BC33B /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		85695827C7CF2E34803F091E /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DF3FC22AAB5A0F4046373F74 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F7F8ED701C3C54EE00AE072E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,7 +435,6 @@
 			files = (
 				F7A48FCB1B8A47D600E6BFBB /* WXManager.m in Sources */,
 				F7A48FD11B8A480B00E6BFBB /* WXDailyForecast.m in Sources */,
-				F76B6C381C2E2626008A98AB /* WXClient.m in Sources */,
 				C62ECECF1B7E611A00AC9C1F /* ContextDataController.swift in Sources */,
 				C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */,
 				C62ECED11B7E613400AC9C1F /* MapsRemoteDataController.swift in Sources */,
@@ -482,8 +510,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_ONLY_ACTIVE_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -500,8 +530,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Objective-CBridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -530,8 +562,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_ONLY_ACTIVE_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -541,7 +576,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Objective-CBridgingHeader.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -551,19 +589,30 @@
 		};
 		C64F85DD1B386B7100011FCE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AA86CC0A41649AE450030B9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ext",
 				);
+				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = "Stormy Travel Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-lc++",
+					"-lbz2",
+					"-lz",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrong.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -574,19 +623,28 @@
 		};
 		C64F85DE1B386B7100011FCE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30E76E276733D8D01E76A189 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ext",
 				);
 				INFOPLIST_FILE = "Stormy Travel Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-lc++",
+					"-lbz2",
+					"-lz",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrong.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -599,10 +657,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -621,10 +676,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Stormy Travel TimeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrong.$(PRODUCT_NAME:rfc1034identifier)";
