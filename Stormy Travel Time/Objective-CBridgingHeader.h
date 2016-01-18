@@ -14,6 +14,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import "WeatherDataModel.h"
+#import "WXManager.h"
 @import CoreLocation;
 
 

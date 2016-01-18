@@ -16,7 +16,7 @@ enum TravelModes: Int {
 }
 
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigationBarDelegate  {
+class HomeViewController: UIViewController, UINavigationBarDelegate  {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var findAddressButton: UIBarButtonItem!
@@ -29,13 +29,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     @IBOutlet weak var navigationBar: UINavigationItem!
     
     @IBOutlet weak var weatherIcon: UIImageView!
-    var locationManager = CLLocationManager()
+    var locationManager = WXManager.sharedManager()
     
     var homeViewModel = HomeViewModel()
     
     var didFindMyLocation = false
     
     var waypointsArray: Array<String> = []
+    
+    var myLocation = CLLocation()
     
     var travelMode = TravelModes.driving
     
@@ -44,6 +46,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     var weatherData = WeatherDataController()
     
     var locationMarker: GMSMarker!
+    
+    var manager: WXManager!
     
     var routePolyline: GMSPolyline!
     
@@ -59,8 +63,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             self.weatherIcon.hidden = true
         }
      
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        self.manager = WXManager.sharedManager()
         
         self.registerForNotifications()
         
@@ -73,6 +76,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeMapTypePressed:", name: "com.StormyTravelTime.mapType", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "createRoutePressed:", name: "com.StormyTravelTime.directions", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeTravelModePressed:", name: "com.StormyTravelTime.travelType", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationAuthorizedByUser:",name:"locationAuthorized",object: nil)
        
     }
 
@@ -280,13 +284,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
             }
         }
     }
-
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus)
+    
+    func locationAuthorizedByUser(note: NSNotification)
     {
-        if status == CLAuthorizationStatus.AuthorizedWhenInUse
-        {
-            mapView.myLocationEnabled = true
+        if let info:NSDictionary = note.userInfo, location = info["myLocation"] as? CLLocation {
+            print(location.coordinate)
+            mapView.camera = GMSCameraPosition.cameraWithTarget(location.coordinate, zoom: 10.0)
+            mapView.settings.myLocationButton = true
+            
+            didFindMyLocation = true
         }
+        
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>)
