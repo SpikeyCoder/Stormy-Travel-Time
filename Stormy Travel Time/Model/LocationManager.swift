@@ -11,8 +11,8 @@ import UIKit
 enum LocationUpdateStrings
 {
     case LocationChanged
-    case LocationUpdateKey
-    case LocationUpdatesDenied
+    case LocationChangedKey
+    case LocationChangesDenied
     
     func name() -> String
     {
@@ -20,9 +20,9 @@ enum LocationUpdateStrings
         {
             case .LocationChanged:
                 return "com.armstrongapp.LocationChanged"
-            case .LocationUpdateKey:
-                return "LocationUpdated"
-            case .LocationUpdatesDenied:
+            case .LocationChangedKey:
+                return "LocationChanged"
+            case .LocationChangesDenied:
                 return "com.armstrongapp.LocationUpdatesDenied"
         }
     }
@@ -41,7 +41,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate
         return locationMgr
     }()
     
-    private var lastUpdateTimestamp: NSDate?
+    private var firstUpdate = true
     
     
     func requestLocationWhileInUse()
@@ -73,10 +73,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate
                 break
 //                notify user that will not be able to retrieve current location
             case .AuthorizedWhenInUse:
-                if let locationManager: CLLocationManager = manager, location:CLLocation = locationManager.location
-                {
-                    self.processLocationUpdateOnMap(location)
-                }
+                self.updateLocationOnMap()
             
             default:
                 break
@@ -90,10 +87,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        if let newestLocation:CLLocation = locations.first
+        if let newestLocation:CLLocation = locations.first where !self.firstUpdate
         {
+            print("location taken: \(newestLocation)")
             self.processLocationUpdateOnMap(newestLocation)
         }
+        print("location that's not taken: \(locations.first)")
+        self.firstUpdate = false
     }
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation)
@@ -104,7 +104,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     func processLocationUpdateOnMap(location:CLLocation)
     {
         let name = LocationUpdateStrings.LocationChanged.name()
-        let key = LocationUpdateStrings.LocationUpdateKey.name()
+        let key = LocationUpdateStrings.LocationChangedKey.name()
         NSNotificationCenter.defaultCenter().postNotificationName(name, object: self, userInfo: [key : location])
     }
     

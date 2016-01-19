@@ -71,18 +71,18 @@ class HomeViewController: UIViewController, UINavigationBarDelegate  {
     
     private func registerForNotifications()
     {
-        mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
+        mapView.addObserver(self, forKeyPath: "locationChanged", options: NSKeyValueObservingOptions.New, context: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "findAddressCellPressed:", name: "com.StormyTravelTime.findAddress", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeMapTypePressed:", name: "com.StormyTravelTime.mapType", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "createRoutePressed:", name: "com.StormyTravelTime.directions", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeTravelModePressed:", name: "com.StormyTravelTime.travelType", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationAuthorizedByUser:",name:"locationAuthorized",object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationAuthorizedByUser:",name:LocationUpdateStrings.LocationChanged.name(),object: nil)
        
     }
 
     deinit
     {
-        NSNotificationCenter.defaultCenter().removeObserver(self, forKeyPath: "myLocation")
+        NSNotificationCenter.defaultCenter().removeObserver(self, forKeyPath: "locationChanged")
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
@@ -287,7 +287,8 @@ class HomeViewController: UIViewController, UINavigationBarDelegate  {
     
     func locationAuthorizedByUser(note: NSNotification)
     {
-        if let info:NSDictionary = note.userInfo, location = info["myLocation"] as? CLLocation {
+        if let info:[NSObject:AnyObject] = note.userInfo, location = info[LocationUpdateStrings.LocationChangedKey.name()] as? CLLocation
+        {
             print(location.coordinate)
             mapView.camera = GMSCameraPosition.cameraWithTarget(location.coordinate, zoom: 10.0)
             mapView.settings.myLocationButton = true
