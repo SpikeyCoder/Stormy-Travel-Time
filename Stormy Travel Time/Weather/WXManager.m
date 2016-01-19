@@ -59,12 +59,4 @@
     }
 }
 
--(void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    if (status == kCLAuthorizationStatusAuthorizedWhenInUse)
-    {
-        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:manager.location forKey:@"myLocation"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"locationChanged" object:nil userInfo:userInfo];
-    }
-}
-
 @end

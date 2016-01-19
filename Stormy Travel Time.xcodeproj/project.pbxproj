@@ -43,6 +43,7 @@
 		F70A0B621C4B5B0A00FDEAFF /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F70A0B611C4B5B0A00FDEAFF /* GoogleMaps.bundle */; };
 		F70A0B661C4B5CD400FDEAFF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B651C4B5CD400FDEAFF /* CoreText.framework */; };
 		F70A0B671C4B5FCF00FDEAFF /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B631C4B5B3B00FDEAFF /* GoogleMaps.framework */; };
+		F718DF241C4E455900573251 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718DF231C4E455900573251 /* LocationManager.swift */; };
 		F76B6C3B1C2E39FE008A98AB /* WeatherDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */; };
 		F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */; };
 		F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76BAC111B811B31008640E2 /* SideMenu.storyboard */; };
@@ -115,6 +116,7 @@
 		F70A0B611C4B5B0A00FDEAFF /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = ext/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		F70A0B631C4B5B3B00FDEAFF /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ext/GoogleMaps.framework; sourceTree = "<group>"; };
 		F70A0B651C4B5CD400FDEAFF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		F718DF231C4E455900573251 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Model/LocationManager.swift; sourceTree = "<group>"; };
 		F76B6C391C2E39FE008A98AB /* WeatherDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherDataModel.h; path = Weather/WeatherDataModel.h; sourceTree = "<group>"; };
 		F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherDataModel.m; path = Weather/WeatherDataModel.m; sourceTree = "<group>"; };
 		F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataController.swift; path = DataControllers/WeatherDataController.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		C64F85BC1B386B7000011FCE /* Stormy Travel Time */ = {
 			isa = PBXGroup;
 			children = (
+				F718DF221C4E453000573251 /* Model */,
 				F7A48FC21B8A42B600E6BFBB /* Weather */,
 				F76BAC241B88E156008640E2 /* ViewModels */,
 				C62ECECD1B7E608300AC9C1F /* DataControllers */,
@@ -281,6 +284,14 @@
 				C64F85D71B386B7100011FCE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F718DF221C4E453000573251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F718DF231C4E455900573251 /* LocationManager.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		F76BAC191B88C881008640E2 /* SWRevealController */ = {
@@ -441,6 +452,7 @@
 				F7A48FD11B8A480B00E6BFBB /* WXDailyForecast.m in Sources */,
 				C62ECECF1B7E611A00AC9C1F /* ContextDataController.swift in Sources */,
 				C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */,
+				F718DF241C4E455900573251 /* LocationManager.swift in Sources */,
 				C62ECED11B7E613400AC9C1F /* MapsRemoteDataController.swift in Sources */,
 				C62ECEC91B7E45D400AC9C1F /* HomeViewModel.swift in Sources */,
 				F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */,

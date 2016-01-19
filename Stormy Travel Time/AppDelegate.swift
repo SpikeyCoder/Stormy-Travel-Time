@@ -14,11 +14,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var locationAppDelegate : LocationManagerAppDelegate?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
          GMSServices.provideAPIKey("AIzaSyCEwKWpGuKNB3G-GYmrxhhNRepH5Cv-kpY")
+        
+         self.configureLocationManagerAppDelegate()
+        
         // Override point for customization after application launch.
         return true
+    }
+    
+    func configureLocationManagerAppDelegate()
+    {
+        self.locationAppDelegate = LocationManagerAppDelegate.sharedInstance
+        self.locationAppDelegate?.applicationDidFinishLaunchingWithOptions()
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -33,6 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        if let locationDelegate: LocationManagerAppDelegate = self.locationAppDelegate
+        {
+            locationDelegate.applicationWillEnterForeground()
+        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -45,5 +61,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ContextDataController().saveContext()
     }
 
+}
+
+class LocationManagerAppDelegate {
+    
+    static let sharedInstance = LocationManagerAppDelegate()
+    
+    lazy var locationManager : LocationManager = {
+        return LocationManager()
+    }()
+    
+    init()
+    {
+        
+    }
+    
+    func applicationDidFinishLaunchingWithOptions()
+    {
+        self.locationManager.requestLocationWhileInUse()
+    }
+    
+    func applicationWillEnterForeground()
+    {
+        self.locationManager.updateLocationOnMap()
+    }
+    
+    func applicationDidBecomeActive()
+    {
+        
+    }
+    
+    func applicationDidEnterBackground()
+    {
+        
+    }
+    
+    func applicationWokeInBackground()
+    {
+        
+    }
 }
 
