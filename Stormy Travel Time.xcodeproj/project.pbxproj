@@ -53,9 +53,6 @@
 		F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */; };
 		F76BAC1C1B88C8BA008640E2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC1B1B88C8BA008640E2 /* SWRevealViewController.m */; };
 		F76BAC261B88E18E008640E2 /* MenuActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC251B88E18E008640E2 /* MenuActionViewModel.swift */; };
-		F7A48FCB1B8A47D600E6BFBB /* WXManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A48FCA1B8A47D600E6BFBB /* WXManager.m */; };
-		F7A48FCE1B8A47F100E6BFBB /* WXCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A48FCD1B8A47F100E6BFBB /* WXCondition.m */; };
-		F7A48FD11B8A480B00E6BFBB /* WXDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A48FD01B8A480B00E6BFBB /* WXDailyForecast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,12 +129,6 @@
 		F76BAC1B1B88C8BA008640E2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		F76BAC231B88CBC9008640E2 /* Objective-CBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Objective-CBridgingHeader.h"; path = "Stormy Travel Time/Objective-CBridgingHeader.h"; sourceTree = "<group>"; };
 		F76BAC251B88E18E008640E2 /* MenuActionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuActionViewModel.swift; sourceTree = "<group>"; };
-		F7A48FC91B8A47D600E6BFBB /* WXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXManager.h; path = Weather/WXManager.h; sourceTree = "<group>"; };
-		F7A48FCA1B8A47D600E6BFBB /* WXManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXManager.m; path = Weather/WXManager.m; sourceTree = "<group>"; };
-		F7A48FCC1B8A47F100E6BFBB /* WXCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXCondition.h; path = Weather/WXCondition.h; sourceTree = "<group>"; };
-		F7A48FCD1B8A47F100E6BFBB /* WXCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXCondition.m; path = Weather/WXCondition.m; sourceTree = "<group>"; };
-		F7A48FCF1B8A480B00E6BFBB /* WXDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDailyForecast.h; path = Weather/WXDailyForecast.h; sourceTree = "<group>"; };
-		F7A48FD01B8A480B00E6BFBB /* WXDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDailyForecast.m; path = Weather/WXDailyForecast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,12 +317,6 @@
 		F7A48FC21B8A42B600E6BFBB /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				F7A48FC91B8A47D600E6BFBB /* WXManager.h */,
-				F7A48FCA1B8A47D600E6BFBB /* WXManager.m */,
-				F7A48FCC1B8A47F100E6BFBB /* WXCondition.h */,
-				F7A48FCD1B8A47F100E6BFBB /* WXCondition.m */,
-				F7A48FCF1B8A480B00E6BFBB /* WXDailyForecast.h */,
-				F7A48FD01B8A480B00E6BFBB /* WXDailyForecast.m */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -488,8 +473,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7A48FCB1B8A47D600E6BFBB /* WXManager.m in Sources */,
-				F7A48FD11B8A480B00E6BFBB /* WXDailyForecast.m in Sources */,
 				C62ECECF1B7E611A00AC9C1F /* ContextDataController.swift in Sources */,
 				C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */,
 				F718DF241C4E455900573251 /* LocationManager.swift in Sources */,
@@ -501,7 +484,6 @@
 				C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */,
 				F76BAC261B88E18E008640E2 /* MenuActionViewModel.swift in Sources */,
 				F76BAC1C1B88C8BA008640E2 /* SWRevealViewController.m in Sources */,
-				F7A48FCE1B8A47F100E6BFBB /* WXCondition.m in Sources */,
 				C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */,
 				C64F85C01B386B7000011FCE /* AppDelegate.swift in Sources */,
 			);

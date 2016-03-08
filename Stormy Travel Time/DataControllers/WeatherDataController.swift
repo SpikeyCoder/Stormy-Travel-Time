@@ -77,9 +77,11 @@ class WeatherDataController: NSObject {
     {
         let task = NSURLSession.sharedSession().dataTaskWithURL(url)
             { (data, response, error) -> Void in
-                if let dataFromURL:NSData = data, jsonResult = try? NSJSONSerialization.JSONObjectWithData(dataFromURL, options: NSJSONReadingOptions.MutableContainers) as? [NSObject:AnyObject]
+                if let dataFromURL:NSData = data,
+                    jsonResult = try? NSJSONSerialization.JSONObjectWithData(dataFromURL, options: NSJSONReadingOptions.MutableContainers) as? [NSObject:AnyObject],
+                    json = jsonResult
                 {
-                    completion(jsonResult: jsonResult!)
+                    completion(jsonResult: json)
                 }
         }
         task.resume()

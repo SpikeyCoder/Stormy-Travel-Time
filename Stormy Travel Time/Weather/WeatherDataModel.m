@@ -7,7 +7,6 @@
 //
 
 #import "WeatherDataModel.h"
-#import "WXManager.h"
 
 @implementation WeatherDataModel
 

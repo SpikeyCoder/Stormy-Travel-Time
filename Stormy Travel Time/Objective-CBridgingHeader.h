@@ -9,12 +9,10 @@
 #ifndef Stormy_Travel_Time_Objective_CBridgingHeader_h
 #define Stormy_Travel_Time_Objective_CBridgingHeader_h
 #import "SWRevealViewController.h"
-#import "WXDailyForecast.h"
 #import <Mantle/Mantle.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import "WeatherDataModel.h"
-#import "WXManager.h"
 @import CoreLocation;
 
 
