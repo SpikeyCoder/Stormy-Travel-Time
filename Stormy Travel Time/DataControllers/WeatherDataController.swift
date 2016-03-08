@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+typealias WeatherCompletion = (tempString:String) -> Void
+
 class WeatherDataController: NSObject {
     
     var degreesAtDestination = 75.0
@@ -20,7 +22,7 @@ class WeatherDataController: NSObject {
         super.init()
     }
     
-    func weatherAtDestination(duration:Int, coordinate: CLLocationCoordinate2D, completion:(tempString: String)->Void)
+    func weatherAtDestination(duration:Int, coordinate: CLLocationCoordinate2D, completion:WeatherCompletion)
     {
         let urlString = NSString(format: "http://api.openweathermap.org/data/2.5/forecast?lat=%f&lon=%f&units=imperial&cnt=12&APPID=8a9a4b36a224b8b0d349e971d321541f", coordinate.latitude, coordinate.longitude)
         
@@ -56,7 +58,7 @@ class WeatherDataController: NSObject {
         }
     }
     
-    func weatherAtLocation(coordinate: CLLocationCoordinate2D, completion:(tempString: String)->Void)
+    func weatherAtLocation(coordinate: CLLocationCoordinate2D, completion:WeatherCompletion)
     {
         let urlString = NSString(format: "http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=imperial&cnt=7&APPID=8a9a4b36a224b8b0d349e971d321541f", coordinate.latitude, coordinate.longitude)
 

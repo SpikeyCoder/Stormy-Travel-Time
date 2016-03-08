@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 
+typealias MapTasksCompletion = (status: String, success: Bool) -> Void
+
 class MapTasks: NSObject
 {
     let baseURLGeocode = "https://maps.googleapis.com/maps/api/geocode/json?"
@@ -49,7 +51,7 @@ class MapTasks: NSObject
         super.init()
     }
     
-    func geocodeAddress(address: String!, withCompletionHandler completionHandler: ((status: String, success: Bool) -> Void))
+    func geocodeAddress(address: String?, withCompletionHandler completion:MapTasksCompletion)
     {
         if let lookupAddress = address
         {
@@ -62,9 +64,11 @@ class MapTasks: NSObject
                 if let geocodingResultsData = NSData(contentsOfURL: geocodeURL)
                 {
                     do{
-                        let dictionary = try NSJSONSerialization.JSONObjectWithData(geocodingResultsData, options: NSJSONReadingOptions.MutableContainers) as? [NSObject:AnyObject]
-                        let status = dictionary!["status"] as! String
-                        completionHandler(status: status, success: self.getResponseStatus(dictionary!))
+                        if let dictionary = try NSJSONSerialization.JSONObjectWithData(geocodingResultsData, options: NSJSONReadingOptions.MutableContainers) as? [NSObject:AnyObject],
+                         status = dictionary["status"] as? String
+                        {
+                            completion(status: status, success: self.getResponseStatus(dictionary))
+                        }
                     }
                     catch let error as NSError
                     {
@@ -76,7 +80,7 @@ class MapTasks: NSObject
         }
         else
         {
-            completionHandler(status: "No valid address.", success: false)
+            completion(status: "No valid address.", success: false)
         }
 
     }
@@ -104,7 +108,8 @@ class MapTasks: NSObject
         }
     }
     
-    func getDirections(origin: String!, destination: String!, waypoints: Array<String>!, travelMode: AnyObject!, completionHandler: ((status: String, success: Bool) -> Void)) {
+    func getDirections(origin: String?, destination: String?, waypoints: Array<String>?, travelMode: AnyObject?, completionHandler: MapTasksCompletion)
+    {
         if let originLocation = origin, destinationLocation = destination
         {
                 let directionsURLString = baseURLDirections + "origin=" + originLocation + "&destination=" + destinationLocation
@@ -158,10 +163,6 @@ class MapTasks: NSObject
                     }
                         
                 })  }
-//                        catch let error as NSError{
-//                    print(error)
-//                    completionHandler(status: "", success: false)
-//                }
         }
         else
         {
@@ -208,12 +209,9 @@ class MapTasks: NSObject
         var infoTimeString = "Duration: "
         for timeUnit in timeArray
         {
-            if timeUnit.rangeOfString("secs") == nil
+            if timeUnit.rangeOfString("secs") == nil && timeUnit.rangeOfString(" 0") == nil
             {
-                if timeUnit.rangeOfString(" 0") == nil
-                {
-                    infoTimeString += timeUnit.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-                }
+                infoTimeString += timeUnit.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             }
             else
             {

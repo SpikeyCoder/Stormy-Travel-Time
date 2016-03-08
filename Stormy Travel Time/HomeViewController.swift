@@ -19,7 +19,6 @@ enum TravelModes: Int {
 class HomeViewController: UIViewController, UINavigationBarDelegate  {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var findAddressButton: UIBarButtonItem!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var weatherIconBottomConstraint: NSLayoutConstraint!
@@ -29,7 +28,7 @@ class HomeViewController: UIViewController, UINavigationBarDelegate  {
     @IBOutlet weak var navigationBar: UINavigationItem!
     
     @IBOutlet weak var weatherIcon: UIImageView!
-    var locationManager = WXManager.sharedManager()
+    var locationManager = LocationManager()
     
     var homeViewModel = HomeViewModel()
     
@@ -47,7 +46,7 @@ class HomeViewController: UIViewController, UINavigationBarDelegate  {
     
     var locationMarker: GMSMarker!
     
-    var manager: WXManager!
+    var manager: LocationManager!
     
     var routePolyline: GMSPolyline!
     
@@ -63,7 +62,7 @@ class HomeViewController: UIViewController, UINavigationBarDelegate  {
             self.weatherIcon.hidden = true
         }
      
-        self.manager = WXManager.sharedManager()
+        self.manager = LocationManager()
         
         self.registerForNotifications()
         
@@ -93,6 +92,10 @@ class HomeViewController: UIViewController, UINavigationBarDelegate  {
     func changeTravelModePressed(note:NSNotification)
     {
         self.travelModeAction()
+    }
+    
+    func getCurrentLocation(){
+        self.manager.updateLocationOnMap()
     }
     
     func travelModeAction()
@@ -191,36 +194,7 @@ class HomeViewController: UIViewController, UINavigationBarDelegate  {
         let findAction = UIAlertAction(title: "Find Address", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             if let addressTextFields:[UITextField] = addressAlert.textFields, addressTextField:UITextField = addressTextFields[0], address:String = addressTextField.text
             {
-                        self.mapTasks.geocodeAddress(address, withCompletionHandler: { (status, success) -> Void in
-                    
-                    if !success
-                    {
-                        print(status)
-                        
-                        if status == "ZERO_RESULTS"
-                        {
-                            let alert = self.homeViewModel.showAlertWithMessage("The location could not be found.")
-                            self.presentViewController(alert, animated: true, completion: nil)
-                        }
-                    }
-                    else
-                    {
-                        let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
-                        self.mapView.camera = GMSCameraPosition.cameraWithTarget(coordinate, zoom: 14.0)
-                        self.homeViewModel.setupLocationMarker(self.mapTasks, mapView: self.mapView, coordinate: coordinate)
-                    }
-                    if self.infoLabel.text!.rangeOfString("Total Distance") == nil
-                    {
-                       
-                        let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
-                        self.weatherData.weatherAtLocation(coordinate, completion: { (tempString) -> Void in
-                            self.infoLabel.text = tempString
-                           
-                        })
-                        
-                    }
-                     self.revealWeatherIcon()
-                })
+                self.programAddressIntoMap(address)
             }
         }
         
@@ -230,6 +204,40 @@ class HomeViewController: UIViewController, UINavigationBarDelegate  {
         addressAlert.addAction(closeAction)
         
         presentViewController(addressAlert, animated: true, completion: nil)
+    }
+    
+    func programAddressIntoMap(address: String)
+    {
+        self.mapTasks.geocodeAddress(address, withCompletionHandler: { (status, success) -> Void in
+            
+            if !success
+            {
+                print(status)
+                
+                if status == "ZERO_RESULTS"
+                {
+                    let alert = self.homeViewModel.showAlertWithMessage("The location could not be found.")
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            }
+            else
+            {
+                let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
+                self.mapView.camera = GMSCameraPosition.cameraWithTarget(coordinate, zoom: 14.0)
+                self.homeViewModel.setupLocationMarker(self.mapTasks, mapView: self.mapView, coordinate: coordinate)
+            }
+            if self.infoLabel.text!.rangeOfString("Total Distance") == nil
+            {
+                
+                let coordinate = self.homeViewModel.getCoordinate(self.mapTasks)
+                self.weatherData.weatherAtLocation(coordinate, completion: { (tempString) -> Void in
+                    self.infoLabel.text = tempString
+                    
+                })
+                
+            }
+            self.revealWeatherIcon()
+        })
     }
    
 //    MARK : - Create Route Action
@@ -289,8 +297,8 @@ class HomeViewController: UIViewController, UINavigationBarDelegate  {
     {
         if let info:[NSObject:AnyObject] = note.userInfo, location = info[LocationUpdateStrings.LocationChangedKey.name()] as? CLLocation
         {
-            print(location.coordinate)
-            mapView.camera = GMSCameraPosition.cameraWithTarget(location.coordinate, zoom: 10.0)
+            print("YES I MADE IT HERE: \(location.coordinate)\n\n\n\n")
+            self.mapView.camera = GMSCameraPosition.cameraWithTarget(location.coordinate, zoom: 14.0)
             mapView.settings.myLocationButton = true
             
             didFindMyLocation = true

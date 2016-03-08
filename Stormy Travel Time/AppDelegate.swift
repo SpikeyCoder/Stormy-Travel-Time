@@ -7,7 +7,8 @@
 //
 
 import GoogleMaps
-
+import Fabric
+import Crashlytics
 import UIKit
 
 @UIApplicationMain
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          GMSServices.provideAPIKey("AIzaSyCEwKWpGuKNB3G-GYmrxhhNRepH5Cv-kpY")
         
          self.configureLocationManagerAppDelegate()
+        
+        Fabric.with([Crashlytics.self])
         
         // Override point for customization after application launch.
         return true

@@ -45,6 +45,8 @@
 		F70A0B671C4B5FCF00FDEAFF /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B631C4B5B3B00FDEAFF /* GoogleMaps.framework */; };
 		F71266ED1C4EFC02008790C2 /* USCapitol.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F71266EC1C4EFC02008790C2 /* USCapitol.gpx */; };
 		F718DF241C4E455900573251 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718DF231C4E455900573251 /* LocationManager.swift */; };
+		F71C89CE1C558FEB00E46A48 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71C89CC1C558FEB00E46A48 /* Fabric.framework */; };
+		F71C89CF1C558FEB00E46A48 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71C89CD1C558FEB00E46A48 /* Crashlytics.framework */; };
 		F76B6C3B1C2E39FE008A98AB /* WeatherDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */; };
 		F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */; };
 		F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76BAC111B811B31008640E2 /* SideMenu.storyboard */; };
@@ -119,6 +121,8 @@
 		F70A0B651C4B5CD400FDEAFF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		F71266EC1C4EFC02008790C2 /* USCapitol.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = USCapitol.gpx; path = ../Downloads/USCapitol.gpx; sourceTree = "<group>"; };
 		F718DF231C4E455900573251 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Model/LocationManager.swift; sourceTree = "<group>"; };
+		F71C89CC1C558FEB00E46A48 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		F71C89CD1C558FEB00E46A48 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		F76B6C391C2E39FE008A98AB /* WeatherDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherDataModel.h; path = Weather/WeatherDataModel.h; sourceTree = "<group>"; };
 		F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherDataModel.m; path = Weather/WeatherDataModel.m; sourceTree = "<group>"; };
 		F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataController.swift; path = DataControllers/WeatherDataController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				F70A0B661C4B5CD400FDEAFF /* CoreText.framework in Frameworks */,
 				F70A0B471C4B458800FDEAFF /* Accelerate.framework in Frameworks */,
 				F70A0B451C4B458000FDEAFF /* CoreBluetooth.framework in Frameworks */,
+				F71C89CF1C558FEB00E46A48 /* Crashlytics.framework in Frameworks */,
 				F70A0B5B1C4B516500FDEAFF /* Result.framework in Frameworks */,
 				F70A0B431C4B453F00FDEAFF /* CoreLocation.framework in Frameworks */,
 				F70A0B411C4B452500FDEAFF /* OpenGLES.framework in Frameworks */,
@@ -162,6 +167,7 @@
 				F70A0B311C4B448300FDEAFF /* SystemConfiguration.framework in Frameworks */,
 				F70A0B2F1C4B447B00FDEAFF /* Security.framework in Frameworks */,
 				F70A0B5D1C4B516C00FDEAFF /* ReactiveCocoa.framework in Frameworks */,
+				F71C89CE1C558FEB00E46A48 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +252,8 @@
 		C64F85BC1B386B7000011FCE /* Stormy Travel Time */ = {
 			isa = PBXGroup;
 			children = (
+				F71C89CC1C558FEB00E46A48 /* Fabric.framework */,
+				F71C89CD1C558FEB00E46A48 /* Crashlytics.framework */,
 				F718DF221C4E453000573251 /* Model */,
 				F7A48FC21B8A42B600E6BFBB /* Weather */,
 				F76BAC241B88E156008640E2 /* ViewModels */,
@@ -340,6 +348,8 @@
 				C64F85B81B386B7000011FCE /* Resources */,
 				F7F8ED701C3C54EE00AE072E /* ShellScript */,
 				F70A0B5A1C4B515D00FDEAFF /* Embed Frameworks */,
+				F71C89CB1C558F9300E46A48 /* ShellScript */,
+				F7D161FE1C5EB1AB00C8FC33 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -432,6 +442,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		F71C89CB1C558F9300E46A48 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n./Fabric.framework/run 984ce11cd3ccaf7f3fada02ba46a3152e6931249 a8e22e3fcf8faf89f6b96fb1437185bfe5ad949f215b1f0de4cf38eb685881d5";
+		};
+		F7D161FE1C5EB1AB00C8FC33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\ndone";
+		};
 		F7F8ED701C3C54EE00AE072E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -619,6 +655,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ext",
+					"$(PROJECT_DIR)",
 				);
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = "Stormy Travel Time/Info.plist";
@@ -653,6 +690,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ext",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Stormy Travel Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
