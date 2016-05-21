@@ -7,13 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */; };
+		C62ECEC91B7E45D400AC9C1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */; };
+		C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECECB1B7E5F4C00AC9C1F /* MapTasks.swift */; };
+		C62ECECF1B7E611A00AC9C1F /* ContextDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECECE1B7E611A00AC9C1F /* ContextDataController.swift */; };
+		C62ECED11B7E613400AC9C1F /* MapsRemoteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECED01B7E613400AC9C1F /* MapsRemoteDataController.swift */; };
 		C64F85C01B386B7000011FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85BF1B386B7000011FCE /* AppDelegate.swift */; };
 		C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C64F85C11B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld */; };
-		C64F85C51B386B7000011FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85C41B386B7000011FCE /* ViewController.swift */; };
 		C64F85C81B386B7100011FCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64F85C61B386B7100011FCE /* Main.storyboard */; };
 		C64F85CA1B386B7100011FCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64F85C91B386B7100011FCE /* Images.xcassets */; };
 		C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64F85CB1B386B7100011FCE /* LaunchScreen.xib */; };
 		C64F85D91B386B7100011FCE /* Stormy_Travel_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */; };
+		F70A0B2F1C4B447B00FDEAFF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B2E1C4B447B00FDEAFF /* Security.framework */; };
+		F70A0B311C4B448300FDEAFF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B301C4B448300FDEAFF /* SystemConfiguration.framework */; };
+		F70A0B331C4B449D00FDEAFF /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B321C4B449D00FDEAFF /* GLKit.framework */; };
+		F70A0B351C4B44A400FDEAFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B341C4B44A400FDEAFF /* CoreGraphics.framework */; };
+		F70A0B371C4B44CC00FDEAFF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B361C4B44CC00FDEAFF /* CoreImage.framework */; };
+		F70A0B391C4B44D300FDEAFF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B381C4B44D300FDEAFF /* ImageIO.framework */; };
+		F70A0B3B1C4B44F400FDEAFF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B3A1C4B44F400FDEAFF /* CoreData.framework */; };
+		F70A0B3D1C4B450300FDEAFF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B3C1C4B450300FDEAFF /* AVFoundation.framework */; };
+		F70A0B3F1C4B451C00FDEAFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B3E1C4B451C00FDEAFF /* QuartzCore.framework */; };
+		F70A0B411C4B452500FDEAFF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B401C4B452500FDEAFF /* OpenGLES.framework */; };
+		F70A0B431C4B453F00FDEAFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */; };
+		F70A0B451C4B458000FDEAFF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */; };
+		F70A0B471C4B458800FDEAFF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B461C4B458800FDEAFF /* Accelerate.framework */; };
+		F70A0B481C4B49BE00FDEAFF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; };
+		F70A0B4B1C4B49EE00FDEAFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; };
+		F70A0B4D1C4B4A1700FDEAFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; };
+		F70A0B581C4B515D00FDEAFF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; };
+		F70A0B591C4B515D00FDEAFF /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABD1C4B301500FDEAFF /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70A0B5B1C4B516500FDEAFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; };
+		F70A0B5C1C4B516500FDEAFF /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70A0B5D1C4B516C00FDEAFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; };
+		F70A0B5E1C4B516C00FDEAFF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70A0B661C4B5CD400FDEAFF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B651C4B5CD400FDEAFF /* CoreText.framework */; };
+		F71266ED1C4EFC02008790C2 /* USCapitol.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F71266EC1C4EFC02008790C2 /* USCapitol.gpx */; };
+		F718DF241C4E455900573251 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718DF231C4E455900573251 /* LocationManager.swift */; };
+		F71C89CE1C558FEB00E46A48 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71C89CC1C558FEB00E46A48 /* Fabric.framework */; };
+		F71C89CF1C558FEB00E46A48 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71C89CD1C558FEB00E46A48 /* Crashlytics.framework */; };
+		F76B6C3B1C2E39FE008A98AB /* WeatherDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */; };
+		F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */; };
+		F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76BAC111B811B31008640E2 /* SideMenu.storyboard */; };
+		F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */; };
+		F76BAC1C1B88C8BA008640E2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC1B1B88C8BA008640E2 /* SWRevealViewController.m */; };
+		F76BAC261B88E18E008640E2 /* MenuActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BAC251B88E18E008640E2 /* MenuActionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,18 +63,68 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F70A0B5A1C4B515D00FDEAFF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F70A0B591C4B515D00FDEAFF /* Mantle.framework in Embed Frameworks */,
+				F70A0B5E1C4B516C00FDEAFF /* ReactiveCocoa.framework in Embed Frameworks */,
+				F70A0B5C1C4B516500FDEAFF /* Result.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C62ECECB1B7E5F4C00AC9C1F /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapTasks.swift; path = util/MapTasks.swift; sourceTree = "<group>"; };
+		C62ECECE1B7E611A00AC9C1F /* ContextDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextDataController.swift; path = DataControllers/ContextDataController.swift; sourceTree = "<group>"; };
+		C62ECED01B7E613400AC9C1F /* MapsRemoteDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapsRemoteDataController.swift; path = DataControllers/MapsRemoteDataController.swift; sourceTree = "<group>"; };
 		C64F85BA1B386B7000011FCE /* Stormy Travel Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stormy Travel Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64F85BE1B386B7000011FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64F85BF1B386B7000011FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C64F85C21B386B7000011FCE /* Stormy_Travel_Time.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stormy_Travel_Time.xcdatamodel; sourceTree = "<group>"; };
-		C64F85C41B386B7000011FCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C64F85C71B386B7100011FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C64F85C91B386B7100011FCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C64F85CC1B386B7100011FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C64F85D21B386B7100011FCE /* Stormy Travel TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stormy Travel TimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64F85D71B386B7100011FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64F85D81B386B7100011FCE /* Stormy_Travel_TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stormy_Travel_TimeTests.swift; sourceTree = "<group>"; };
+		F70A0ABD1C4B301500FDEAFF /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = ext/Mantle.framework; sourceTree = "<group>"; };
+		F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ext/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		F70A0ABF1C4B301500FDEAFF /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ext/Result.framework; sourceTree = "<group>"; };
+		F70A0B2E1C4B447B00FDEAFF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F70A0B301C4B448300FDEAFF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F70A0B321C4B449D00FDEAFF /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		F70A0B341C4B44A400FDEAFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F70A0B361C4B44CC00FDEAFF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		F70A0B381C4B44D300FDEAFF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F70A0B3A1C4B44F400FDEAFF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F70A0B3C1C4B450300FDEAFF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F70A0B3E1C4B451C00FDEAFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F70A0B401C4B452500FDEAFF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		F70A0B461C4B458800FDEAFF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		F70A0B651C4B5CD400FDEAFF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		F71266EC1C4EFC02008790C2 /* USCapitol.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = USCapitol.gpx; path = ../Downloads/USCapitol.gpx; sourceTree = "<group>"; };
+		F718DF231C4E455900573251 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Model/LocationManager.swift; sourceTree = "<group>"; };
+		F71C89CC1C558FEB00E46A48 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		F71C89CD1C558FEB00E46A48 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		F76B6C391C2E39FE008A98AB /* WeatherDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherDataModel.h; path = Weather/WeatherDataModel.h; sourceTree = "<group>"; };
+		F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherDataModel.m; path = Weather/WeatherDataModel.m; sourceTree = "<group>"; };
+		F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataController.swift; path = DataControllers/WeatherDataController.swift; sourceTree = "<group>"; };
+		F76BAC111B811B31008640E2 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		F76BAC1A1B88C8BA008640E2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../SWRevealViewController/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		F76BAC1B1B88C8BA008640E2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		F76BAC231B88CBC9008640E2 /* Objective-CBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Objective-CBridgingHeader.h"; path = "Stormy Travel Time/Objective-CBridgingHeader.h"; sourceTree = "<group>"; };
+		F76BAC251B88E18E008640E2 /* MenuActionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuActionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +132,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70A0B661C4B5CD400FDEAFF /* CoreText.framework in Frameworks */,
+				F70A0B471C4B458800FDEAFF /* Accelerate.framework in Frameworks */,
+				F70A0B451C4B458000FDEAFF /* CoreBluetooth.framework in Frameworks */,
+				F71C89CF1C558FEB00E46A48 /* Crashlytics.framework in Frameworks */,
+				F70A0B5B1C4B516500FDEAFF /* Result.framework in Frameworks */,
+				F70A0B431C4B453F00FDEAFF /* CoreLocation.framework in Frameworks */,
+				F70A0B411C4B452500FDEAFF /* OpenGLES.framework in Frameworks */,
+				F70A0B3F1C4B451C00FDEAFF /* QuartzCore.framework in Frameworks */,
+				F70A0B581C4B515D00FDEAFF /* Mantle.framework in Frameworks */,
+				F70A0B481C4B49BE00FDEAFF /* Mantle.framework in Frameworks */,
+				F70A0B3D1C4B450300FDEAFF /* AVFoundation.framework in Frameworks */,
+				F70A0B4D1C4B4A1700FDEAFF /* Result.framework in Frameworks */,
+				F70A0B3B1C4B44F400FDEAFF /* CoreData.framework in Frameworks */,
+				F70A0B4B1C4B49EE00FDEAFF /* ReactiveCocoa.framework in Frameworks */,
+				F70A0B391C4B44D300FDEAFF /* ImageIO.framework in Frameworks */,
+				F70A0B371C4B44CC00FDEAFF /* CoreImage.framework in Frameworks */,
+				F70A0B351C4B44A400FDEAFF /* CoreGraphics.framework in Frameworks */,
+				F70A0B331C4B449D00FDEAFF /* GLKit.framework in Frameworks */,
+				F70A0B311C4B448300FDEAFF /* SystemConfiguration.framework in Frameworks */,
+				F70A0B2F1C4B447B00FDEAFF /* Security.framework in Frameworks */,
+				F70A0B5D1C4B516C00FDEAFF /* ReactiveCocoa.framework in Frameworks */,
+				F71C89CE1C558FEB00E46A48 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +167,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		023F79612DFB8803E0A7525A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F70A0B651C4B5CD400FDEAFF /* CoreText.framework */,
+				F70A0B461C4B458800FDEAFF /* Accelerate.framework */,
+				F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */,
+				F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */,
+				F70A0B401C4B452500FDEAFF /* OpenGLES.framework */,
+				F70A0B3E1C4B451C00FDEAFF /* QuartzCore.framework */,
+				F70A0B3C1C4B450300FDEAFF /* AVFoundation.framework */,
+				F70A0B3A1C4B44F400FDEAFF /* CoreData.framework */,
+				F70A0B381C4B44D300FDEAFF /* ImageIO.framework */,
+				F70A0B361C4B44CC00FDEAFF /* CoreImage.framework */,
+				F70A0B341C4B44A400FDEAFF /* CoreGraphics.framework */,
+				F70A0B321C4B449D00FDEAFF /* GLKit.framework */,
+				F70A0B301C4B448300FDEAFF /* SystemConfiguration.framework */,
+				F70A0B2E1C4B447B00FDEAFF /* Security.framework */,
+				F70A0ABD1C4B301500FDEAFF /* Mantle.framework */,
+				F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */,
+				F70A0ABF1C4B301500FDEAFF /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C62ECECA1B7E5E9800AC9C1F /* util */ = {
+			isa = PBXGroup;
+			children = (
+				F76BAC191B88C881008640E2 /* SWRevealController */,
+				C62ECECB1B7E5F4C00AC9C1F /* MapTasks.swift */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		C62ECECD1B7E608300AC9C1F /* DataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C62ECECE1B7E611A00AC9C1F /* ContextDataController.swift */,
+				C62ECED01B7E613400AC9C1F /* MapsRemoteDataController.swift */,
+				F76BAC0F1B81120D008640E2 /* WeatherDataController.swift */,
+				F76B6C391C2E39FE008A98AB /* WeatherDataModel.h */,
+				F76B6C3A1C2E39FE008A98AB /* WeatherDataModel.m */,
+			);
+			name = DataControllers;
+			sourceTree = "<group>";
+		};
 		C64F85B11B386B7000011FCE = {
 			isa = PBXGroup;
 			children = (
+				F71266EC1C4EFC02008790C2 /* USCapitol.gpx */,
+				F76BAC231B88CBC9008640E2 /* Objective-CBridgingHeader.h */,
 				C64F85BC1B386B7000011FCE /* Stormy Travel Time */,
 				C64F85D51B386B7100011FCE /* Stormy Travel TimeTests */,
 				C64F85BB1B386B7000011FCE /* Products */,
+				023F79612DFB8803E0A7525A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +236,18 @@
 		C64F85BC1B386B7000011FCE /* Stormy Travel Time */ = {
 			isa = PBXGroup;
 			children = (
+				F71C89CC1C558FEB00E46A48 /* Fabric.framework */,
+				F71C89CD1C558FEB00E46A48 /* Crashlytics.framework */,
+				F718DF221C4E453000573251 /* Model */,
+				F7A48FC21B8A42B600E6BFBB /* Weather */,
+				F76BAC241B88E156008640E2 /* ViewModels */,
+				C62ECECD1B7E608300AC9C1F /* DataControllers */,
+				C62ECECA1B7E5E9800AC9C1F /* util */,
 				C64F85BF1B386B7000011FCE /* AppDelegate.swift */,
-				C64F85C41B386B7000011FCE /* ViewController.swift */,
+				C62ECEC61B7E457600AC9C1F /* HomeViewController.swift */,
 				C64F85C61B386B7100011FCE /* Main.storyboard */,
+				F76BAC111B811B31008640E2 /* SideMenu.storyboard */,
+				F76BAC171B8122B4008640E2 /* SideMenuTableViewController.swift */,
 				C64F85C91B386B7100011FCE /* Images.xcassets */,
 				C64F85CB1B386B7100011FCE /* LaunchScreen.xib */,
 				C64F85C11B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld */,
@@ -115,6 +281,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F718DF221C4E453000573251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F718DF231C4E455900573251 /* LocationManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F76BAC191B88C881008640E2 /* SWRevealController */ = {
+			isa = PBXGroup;
+			children = (
+				F76BAC1A1B88C8BA008640E2 /* SWRevealViewController.h */,
+				F76BAC1B1B88C8BA008640E2 /* SWRevealViewController.m */,
+			);
+			name = SWRevealController;
+			sourceTree = "<group>";
+		};
+		F76BAC241B88E156008640E2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C62ECEC81B7E45D400AC9C1F /* HomeViewModel.swift */,
+				F76BAC251B88E18E008640E2 /* MenuActionViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		F7A48FC21B8A42B600E6BFBB /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,6 +324,10 @@
 				C64F85B61B386B7000011FCE /* Sources */,
 				C64F85B71B386B7000011FCE /* Frameworks */,
 				C64F85B81B386B7000011FCE /* Resources */,
+				F7F8ED701C3C54EE00AE072E /* ShellScript */,
+				F70A0B5A1C4B515D00FDEAFF /* Embed Frameworks */,
+				F71C89CB1C558F9300E46A48 /* ShellScript */,
+				F7D161FE1C5EB1AB00C8FC33 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -159,11 +362,14 @@
 		C64F85B21B386B7000011FCE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Armstrong Enterprises";
 				TargetAttributes = {
 					C64F85B91B386B7000011FCE = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = CUKDK2C25K;
 					};
 					C64F85D11B386B7100011FCE = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -195,6 +401,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */,
+				F71266ED1C4EFC02008790C2 /* USCapitol.gpx in Resources */,
 				C64F85C81B386B7100011FCE /* Main.storyboard in Resources */,
 				C64F85CD1B386B7100011FCE /* LaunchScreen.xib in Resources */,
 				C64F85CA1B386B7100011FCE /* Images.xcassets in Resources */,
@@ -210,12 +418,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F71C89CB1C558F9300E46A48 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n./Fabric.framework/run 984ce11cd3ccaf7f3fada02ba46a3152e6931249 a8e22e3fcf8faf89f6b96fb1437185bfe5ad949f215b1f0de4cf38eb685881d5";
+		};
+		F7D161FE1C5EB1AB00C8FC33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\ndone";
+		};
+		F7F8ED701C3C54EE00AE072E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C64F85B61B386B7000011FCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C64F85C51B386B7000011FCE /* ViewController.swift in Sources */,
+				C62ECECF1B7E611A00AC9C1F /* ContextDataController.swift in Sources */,
+				C62ECEC71B7E457600AC9C1F /* HomeViewController.swift in Sources */,
+				F718DF241C4E455900573251 /* LocationManager.swift in Sources */,
+				C62ECED11B7E613400AC9C1F /* MapsRemoteDataController.swift in Sources */,
+				C62ECEC91B7E45D400AC9C1F /* HomeViewModel.swift in Sources */,
+				F76BAC181B8122B4008640E2 /* SideMenuTableViewController.swift in Sources */,
+				F76B6C3B1C2E39FE008A98AB /* WeatherDataModel.m in Sources */,
+				F76BAC101B81120D008640E2 /* WeatherDataController.swift in Sources */,
+				C62ECECC1B7E5F4C00AC9C1F /* MapTasks.swift in Sources */,
+				F76BAC261B88E18E008640E2 /* MenuActionViewModel.swift in Sources */,
+				F76BAC1C1B88C8BA008640E2 /* SWRevealViewController.m in Sources */,
 				C64F85C31B386B7000011FCE /* Stormy_Travel_Time.xcdatamodeld in Sources */,
 				C64F85C01B386B7000011FCE /* AppDelegate.swift in Sources */,
 			);
@@ -263,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -279,7 +540,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_ONLY_ACTIVE_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -296,9 +560,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Objective-CBridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -324,8 +592,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_ONLY_ACTIVE_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -335,8 +606,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Objective-CBridgingHeader.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -346,9 +621,34 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ext",
+					"$(PROJECT_DIR)",
+				);
+				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = "Stormy Travel Time/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-lc++",
+					"-lbz2",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrong.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stormy Travel Time/Objective-CBridgingHeader.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -356,9 +656,32 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ext",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Stormy Travel Time/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-lc++",
+					"-lbz2",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrong.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stormy Travel Time/Objective-CBridgingHeader.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -366,17 +689,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Stormy Travel TimeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrong.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stormy Travel Time.app/Stormy Travel Time";
 			};
 			name = Debug;
@@ -385,13 +708,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Stormy Travel TimeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrong.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stormy Travel Time.app/Stormy Travel Time";
 			};
 			name = Release;
@@ -415,6 +738,7 @@
 				C64F85DE1B386B7100011FCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C64F85DF1B386B7100011FCE /* Build configuration list for PBXNativeTarget "Stormy Travel TimeTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +747,7 @@
 				C64F85E11B386B7100011FCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
