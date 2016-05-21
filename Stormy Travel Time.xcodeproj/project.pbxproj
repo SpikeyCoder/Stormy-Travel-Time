@@ -40,9 +40,7 @@
 		F70A0B5C1C4B516500FDEAFF /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABF1C4B301500FDEAFF /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F70A0B5D1C4B516C00FDEAFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; };
 		F70A0B5E1C4B516C00FDEAFF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0ABE1C4B301500FDEAFF /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F70A0B621C4B5B0A00FDEAFF /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F70A0B611C4B5B0A00FDEAFF /* GoogleMaps.bundle */; };
 		F70A0B661C4B5CD400FDEAFF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B651C4B5CD400FDEAFF /* CoreText.framework */; };
-		F70A0B671C4B5FCF00FDEAFF /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70A0B631C4B5B3B00FDEAFF /* GoogleMaps.framework */; };
 		F71266ED1C4EFC02008790C2 /* USCapitol.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F71266EC1C4EFC02008790C2 /* USCapitol.gpx */; };
 		F718DF241C4E455900573251 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718DF231C4E455900573251 /* LocationManager.swift */; };
 		F71C89CE1C558FEB00E46A48 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71C89CC1C558FEB00E46A48 /* Fabric.framework */; };
@@ -113,8 +111,6 @@
 		F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		F70A0B461C4B458800FDEAFF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		F70A0B611C4B5B0A00FDEAFF /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = ext/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		F70A0B631C4B5B3B00FDEAFF /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ext/GoogleMaps.framework; sourceTree = "<group>"; };
 		F70A0B651C4B5CD400FDEAFF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		F71266EC1C4EFC02008790C2 /* USCapitol.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = USCapitol.gpx; path = ../Downloads/USCapitol.gpx; sourceTree = "<group>"; };
 		F718DF231C4E455900573251 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Model/LocationManager.swift; sourceTree = "<group>"; };
@@ -136,7 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70A0B671C4B5FCF00FDEAFF /* GoogleMaps.framework in Frameworks */,
 				F70A0B661C4B5CD400FDEAFF /* CoreText.framework in Frameworks */,
 				F70A0B471C4B458800FDEAFF /* Accelerate.framework in Frameworks */,
 				F70A0B451C4B458000FDEAFF /* CoreBluetooth.framework in Frameworks */,
@@ -176,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				F70A0B651C4B5CD400FDEAFF /* CoreText.framework */,
-				F70A0B631C4B5B3B00FDEAFF /* GoogleMaps.framework */,
 				F70A0B461C4B458800FDEAFF /* Accelerate.framework */,
 				F70A0B441C4B458000FDEAFF /* CoreBluetooth.framework */,
 				F70A0B421C4B453F00FDEAFF /* CoreLocation.framework */,
@@ -222,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				F71266EC1C4EFC02008790C2 /* USCapitol.gpx */,
-				F70A0B611C4B5B0A00FDEAFF /* GoogleMaps.bundle */,
 				F76BAC231B88CBC9008640E2 /* Objective-CBridgingHeader.h */,
 				C64F85BC1B386B7000011FCE /* Stormy Travel Time */,
 				C64F85D51B386B7100011FCE /* Stormy Travel TimeTests */,
@@ -408,7 +401,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70A0B621C4B5B0A00FDEAFF /* GoogleMaps.bundle in Resources */,
 				F76BAC121B811B31008640E2 /* SideMenu.storyboard in Resources */,
 				F71266ED1C4EFC02008790C2 /* USCapitol.gpx in Resources */,
 				C64F85C81B386B7100011FCE /* Main.storyboard in Resources */,
